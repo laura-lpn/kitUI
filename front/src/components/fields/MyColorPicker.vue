@@ -1,31 +1,26 @@
 <template>
     <div>
         <label :for="name">{{ label }}</label>
-        <input type="number" :name="name" :id="name" @input="updateValue">
-        <span>{{ suffix }}</span>
+        <input type="color" :name="name" :id="name" @input="updateValue">
     </div>
 </template>
-
 <script>
 export default {
-    name: 'MyInput',
+    name: 'MyColorPicker',
     props: {
         label: {
             type: String,
-            required: true
+            required: false
         },
         name: {
             type: String,
             required: true
         },
-        suffix: {
-            type: String,
-            default: 'px'
-        },
     },
     methods: {
         updateValue(event) {
-            this.$emit('textValue', event.target.value);
+            this.$emit('colorValue', event.target.value);
+            console.log(event.target.value);
         }
     }
 }

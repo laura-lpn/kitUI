@@ -3,8 +3,8 @@ import { defineStore } from 'pinia';
 export const useLayoutStore = defineStore('layout', {
     state: () => ({
         maxWidth: 0,
-        xPadding: 0,
-        yPadding: 0,
+        layoutPaddingX: 0,
+        layoutPaddingY: 0,
         lg: 0,
         md: 0,
         sm: 0,
@@ -13,8 +13,8 @@ export const useLayoutStore = defineStore('layout', {
     }),
     getters: {
         getMaxWidth: (state) => state.maxWidth,
-        getXPadding: (state) => state.xPadding,
-        getYPadding: (state) => state.yPadding,
+        getlayoutPaddingX: (state) => state.layoutPaddingX,
+        getlayoutPaddingY: (state) => state.layoutPaddingY,
         getLg: (state) => state.lg,
         getMd: (state) => state.md,
         getSm: (state) => state.sm,
@@ -25,11 +25,11 @@ export const useLayoutStore = defineStore('layout', {
         setMaxWidth(value) {
             this.maxWidth = value;
         },
-        setXPadding(value) {
-            this.xPadding = value;
+        setlayoutPaddingX(value) {
+            this.layoutPaddingX = value;
         },
-        setYPadding(value) {
-            this.yPadding = value;
+        setlayoutPaddingY(value) {
+            this.layoutPaddingY = value;
         },
         setLg(value) {
             this.lg = value;

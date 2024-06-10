@@ -6,11 +6,11 @@ import App from './App.vue'
 import router from './router'
 import './assets/main.css'
 
-import MyInput from './components/MyInput.vue'
-import MyButton from './components/MyButton.vue'
-import MySelect from './components/MySelect.vue'
-import MyRange from './components/MyRange.vue'
-import MyColorPicker from './components/MyColorPicker.vue'
+import MyInput from './components/fields/MyInput.vue'
+import MyButton from './components/fields/MyButton.vue'
+import MySelect from './components/fields/MySelect.vue'
+import MyRange from './components/fields/MyRange.vue'
+import MyColorPicker from './components/fields/MyColorPicker.vue'
 
 const app = createApp(App)
 
