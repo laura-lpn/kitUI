@@ -1,7 +1,8 @@
 <template>
     <div>
         <label :for="name">{{ label }}</label>
-        <input type="text" :name="name" :id="name">
+        <input type="number" :name="name" :id="name" @input="updateValue">
+        <span>{{ suffix }}</span>
     </div>
 </template>
 
@@ -17,7 +18,15 @@ export default {
             type: String,
             required: true
         },
-
+        suffix: {
+            type: String,
+            default: 'px'
+        },
     },
+    methods: {
+        updateValue(event) {
+            this.$emit('textValue', event.target.value);
+        }
+    }
 }
 </script>

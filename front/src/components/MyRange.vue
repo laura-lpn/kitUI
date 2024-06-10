@@ -1,7 +1,10 @@
 <template>
     <div>
-        <label :for="name">{{ label }}</label>
-        <input type="range" :min="min" :max="max" :step="step" :value="value" @input="$emit('input:value', $event.target.value)">
+        <div>
+            <label :for="name">{{ label }}</label>
+            <span>{{ value }} {{ suffix }}</span>
+        </div>
+        <input type="range" :min="min" :max="max" :step="step" :value="value" @input="updateValue">
     </div>
 </template>
 <script>
@@ -28,9 +31,18 @@ export default {
             type: Number,
             required: true
         },
-        value: Number,
-        
+        suffix: {
+            type: String,
+            default: 'px'
+        },
+        value: {
+            type: Number,
+        }
     },
-    emits: ['input:value']
+    methods: {
+        updateValue(event) {
+            this.$emit('rangeValue', event.target.value);
+        }
+    }
 }
 </script>
