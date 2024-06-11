@@ -28,8 +28,8 @@
           <my-color-picker @colorValue="setAccentColor" :label="''" :name="'accentColor'"></my-color-picker>
         </div>
       </section>
-      <my-button :id="'previousButton'" :value="'Précédent'" @click="updateStore"></my-button>
-      <my-button :id="'nextButton'" :value="'Suivant'" @click="updateStore"></my-button>
+      <my-button :id="'previousButton'" :value="'Précédent'" @click="previousStep"></my-button>
+      <my-button :id="'nextButton'" :value="'Suivant'" @click="nextStep"></my-button>
     </div>
     <div>
       <h1>Rendu</h1>
@@ -53,6 +53,7 @@ export default {
       colorDarkLighter: '' as String,
     };
   },
+  emits:['next', 'previous'],
   methods: {
     setColorLightBase(value: String) {
       this.colorLightBase = value;
@@ -114,6 +115,14 @@ export default {
       let gHex = g.toString(16).padStart(2, '0');
       let bHex = b.toString(16).padStart(2, '0');
       return "#" + rHex + gHex + bHex;
+    },
+    nextStep() {
+      this.updateStore();
+      this.$emit('next');
+    },
+    previousStep() {
+      this.updateStore();
+      this.$emit('previous');
     },
   },
 };

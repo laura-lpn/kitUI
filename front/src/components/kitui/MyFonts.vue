@@ -45,8 +45,8 @@
           <my-input @inputValue="setTextFontSize" :label="'Taille'" :name="'textFontSize'"></my-input>
         </div>
       </section>
-      <my-button :id="'previousButton'" :value="'Précédent'" @click="updateStore"></my-button>
-      <my-button :id="'nextButton'" :value="'Suivant'" @click="updateStore"></my-button>
+      <my-button :id="'previousButton'" :value="'Précédent'" @click="previousStep"></my-button>
+      <my-button :id="'nextButton'" :value="'Suivant'" @click="nextStep"></my-button>
 
     </div>
     <div>
@@ -102,6 +102,7 @@ export default {
       textFontSize: 12,
     };
   },
+  emits:['next', 'previous'],
   methods: {
     setTitleFontFamily(value: String) {
       this.titleFontFamily = value;
@@ -166,6 +167,14 @@ export default {
       store.setH6FontWeight(this.h6FontWeight);
       store.setTextFontFamily(this.textFontFamily);
       store.setTextFontSize(this.textFontSize);
+    },
+    nextStep() {
+      this.updateStore();
+      this.$emit('next');
+    },
+    previousStep() {
+      this.updateStore();
+      this.$emit('previous');
     },
   },
 };

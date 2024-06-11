@@ -8,8 +8,8 @@
           <my-range @rangeValue="setLayoutMaxWidth" :label="'Max-width'" :name="'layoutMaxWidth'" :min="800" :max="2000" :step="100" :suffix="'px'" :value="layoutMaxWidth"></my-range>
           <div>
             <h3>Padding</h3>
-            <my-range @rangeValue="setlayoutPaddingX" :label="'Horizontal'" :name="'layoutPaddingX'" :min="0" :max="100" :step="10" :suffix="'px'" :value="layoutPaddingX"></my-range>
-            <my-range @rangeValue="setlayoutPaddingY" :label="'Vertical'" :name="'layoutPaddingY'" :min="0" :max="100" :step="10" :suffix="'px'" :value="layoutPaddingY"></my-range>
+            <my-range @rangeValue="setLayoutPaddingX" :label="'Horizontal'" :name="'layoutPaddingX'" :min="0" :max="100" :step="10" :suffix="'px'" :value="layoutPaddingX"></my-range>
+            <my-range @rangeValue="setLayoutPaddingY" :label="'Vertical'" :name="'layoutPaddingY'" :min="0" :max="100" :step="10" :suffix="'px'" :value="layoutPaddingY"></my-range>
           
           </div>
         </div>
@@ -24,7 +24,7 @@
           <my-range @rangeValue="setLayoutGutter" :label="'Espacement'" :name="'layoutGutter'" :min="0" :max="80" :step="4" :suffix="'px'" :value="layoutGutter"></my-range>
         </div>
       </section>
-      <my-button :id="'nextButton'" :value="'Suivant'" @click="updateStore"></my-button>
+      <my-button :id="'nextButton'" :value="'Suivant'" @click="nextStep"></my-button>
     </div>
     <div>
         <h1>Rendu</h1>
@@ -49,14 +49,15 @@ export default {
       layoutGutter: 0 as Number,
     };
   },
+  emits:['next'],
   methods: {
     setLayoutMaxWidth(value: Number) {
       this.layoutMaxWidth = value;
     },
-    setlayoutPaddingX(value: Number) {
+    setLayoutPaddingX(value: Number) {
       this.layoutPaddingX = value;
     },
-    setlayoutPaddingY(value: Number) {
+    setLayoutPaddingY(value: Number) {
       this.layoutPaddingY = value;
     },
     setLayoutNbColumns(value: Number) {
@@ -77,13 +78,17 @@ export default {
     updateStore() {
       const store = useLayoutStore();
       store.setLayoutMaxWidth(this.layoutMaxWidth);
-      store.setlayoutPaddingX(this.layoutPaddingX);
-      store.setlayoutPaddingY(this.layoutPaddingY);  
+      store.setLayoutPaddingX(this.layoutPaddingX);
+      store.setLayoutPaddingY(this.layoutPaddingY);  
       store.setLayoutBreakpointLarge(this.layoutBreakpointLarge);
       store.setLayoutBreakpointMedium(this.layoutBreakpointMedium);
       store.setLayoutBreakpointSmall(this.layoutBreakpointSmall);
       store.setLayoutNbColumns(this.layoutNbColumns);
       store.setLayoutGutter(this.layoutGutter);  
+    },
+    nextStep() {
+      this.updateStore();
+      this.$emit('next');
     },
   },
 };
