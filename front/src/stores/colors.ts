@@ -1,25 +1,46 @@
+import { get } from 'http';
 import { defineStore } from 'pinia';
 
 export const useColorsStore = defineStore('colors', {
     state: () => ({
-        darkBase: '#000000',
-        lightBase: '#ffffff',
-        accentColor: '#ff0000',
+        colorLightBase: '' as String,
+        colorLightDarker: '' as String,
+        colorLightLighter: '' as String,
+        colorDarkBase: '' as String,
+        colorDarkDarker: '' as String,
+        colorDarkLighter: '' as String,
+        accentColor: '' as String,
     }),
     getters: {
-        getDarkBase: (state) => state.darkBase,
-        getLightBase: (state) => state.lightBase,
+        getColorLightBase: (state) => state.colorLightBase,
+        getColorDarkBase: (state) => state.colorDarkBase,
         getAccentColor: (state) => state.accentColor,
+        getColorLightDarker: (state) => state.colorLightDarker,
+        getColorLightLighter: (state) => state.colorLightLighter,
+        getColorDarkDarker: (state) => state.colorDarkDarker,
+        getColorDarkLighter: (state) => state.colorDarkLighter,
     },
     actions: {
-        setDarkBase(value) {
-            this.darkBase = value;
+        setColorLightBase(value: String) {
+            this.colorLightBase = value;
         },
-        setLightBase(value) {
-            this.lightBase = value;
+        setColorDarkBase(value: String) {
+            this.colorDarkBase = value;
         },
-        setAccentColor(value) {
+        setAccentColor(value: String) {
             this.accentColor = value;
-        }
+        },
+        setColorLightDarker(value: String) {
+            this.colorLightDarker = value;
+        },
+        setColorLightLighter(value: String) {
+            this.colorLightLighter = value;
+        },
+        setColorDarkDarker(value: String) {
+            this.colorDarkDarker = value;
+        },
+        setColorDarkLighter(value: String) {
+            this.colorDarkLighter = value;
+        },
     },
 });

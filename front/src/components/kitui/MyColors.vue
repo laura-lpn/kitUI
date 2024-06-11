@@ -5,7 +5,7 @@
       <section>
         <h2>Couleur sombre</h2>
         <div> 
-          <my-color-picker @colorValue="setDarkBase" :label="'Base'" :name="'darkBase'"></my-color-picker>
+          <my-color-picker @colorValue="setColorLightBase" :label="'Base'" :name="'colorLightBase'"></my-color-picker>
           <div></div>
           <div></div>
         </div>
@@ -13,7 +13,7 @@
       <section>
         <h2>Couleur claire</h2>
         <div>
-          <my-color-picker @colorValue="setLightBase" :label="'Base'" :name="'lightBase'"></my-color-picker>
+          <my-color-picker @colorValue="setColorDarkBase" :label="'Base'" :name="'colorDarkBase'"></my-color-picker>
           <div></div>
           <div></div>
         </div>
@@ -40,17 +40,17 @@ export default {
   name: 'Layout',
   data() {
     return {
-      darkBase: '#000000' as String,
-      lightBase: '#FFFFFF' as String,
+      colorLightBase: '#000000' as String,
+      colorDarkBase: '#FFFFFF' as String,
       accentColor: '#FF0000' as String,
     };
   },
   methods: {
-    setDarkBase(value: String) {
-      this.darkBase = value;
+    setColorLightBase(value: String) {
+      this.colorLightBase = value;
     },
-    setLightBase(value: String) {
-      this.lightBase = value;
+    setColorDarkBase(value: String) {
+      this.colorDarkBase = value;
     },
     setAccentColor(value: String) {
       this.accentColor = value;
@@ -58,8 +58,8 @@ export default {
    
     updateStore() {
       const store = useColorsStore();
-      store.setDarkBase(this.darkBase);
-      store.setLightBase(this.lightBase);
+      store.setColorLightBase(this.colorLightBase);
+      store.setColorDarkBase(this.colorDarkBase);
       store.setAccentColor(this.accentColor);
     },
   },

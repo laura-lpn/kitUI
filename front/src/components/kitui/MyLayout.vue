@@ -5,7 +5,7 @@
       <section>
         <h2>Conteneur</h2>
         <div> 
-          <my-range @rangeValue="setMaxWidth" :label="'Max-width'" :name="'maxWidth'" :min="800" :max="2000" :step="100" :suffix="'px'" :value="maxWidth"></my-range>
+          <my-range @rangeValue="setLayoutMaxWidth" :label="'Max-width'" :name="'layoutMaxWidth'" :min="800" :max="2000" :step="100" :suffix="'px'" :value="layoutMaxWidth"></my-range>
           <div>
             <h3>Padding</h3>
             <my-range @rangeValue="setlayoutPaddingX" :label="'Horizontal'" :name="'layoutPaddingX'" :min="0" :max="100" :step="10" :suffix="'px'" :value="layoutPaddingX"></my-range>
@@ -17,11 +17,11 @@
       <section>
         <h2>Grille reponsive</h2>
         <div>
-          <my-input @inputValue="setLg" :label="'Large'" :name="'lg'" :suffix="'px'"></my-input>
-          <my-input @inputValue="setMd" :label="'Medium'" :name="'md'" :suffix="'px'"></my-input>
-          <my-input @inputValue="setSm" :label="'Small'" :name="'sm'" :suffix="'px'"></my-input>
-          <my-range @rangeValue="setNbCols" :label="'Nombre de colonnes (max 12)'" :name="'nbCols'" :min="1" :max="12" :step="1" :value="nbCols"></my-range>
-          <my-range @rangeValue="setGap" :label="'Espacement'" :name="'gap'" :min="0" :max="80" :step="4" :suffix="'px'" :value="gap"></my-range>
+          <my-input @inputValue="setLayoutBreakpointLarge" :label="'Large'" :name="'layoutBreakpointLarge'" :suffix="'px'"></my-input>
+          <my-input @inputValue="setLayoutBreakpointMedium" :label="'Medium'" :name="'layoutBreakpointMedium'" :suffix="'px'"></my-input>
+          <my-input @inputValue="setLayoutBreakpointSmall" :label="'layoutBreakpointSmall'" :name="'layoutBreakpointSmall'" :suffix="'px'"></my-input>
+          <my-range @rangeValue="setLayoutNbColumns" :label="'Nombre de colonnes (max 12)'" :name="'layoutNbColumns'" :min="1" :max="12" :step="1" :value="layoutNbColumns"></my-range>
+          <my-range @rangeValue="setLayoutGutter" :label="'Espacement'" :name="'layoutGutter'" :min="0" :max="80" :step="4" :suffix="'px'" :value="layoutGutter"></my-range>
         </div>
       </section>
       <my-button :id="'nextButton'" :value="'Suivant'" @click="updateStore"></my-button>
@@ -39,19 +39,19 @@ export default {
   name: 'Layout',
   data() {
     return {
-      maxWidth: 800 as Number,
+      layoutMaxWidth: 800 as Number,
       layoutPaddingX: 0 as Number,
       layoutPaddingY: 0 as Number,
-      lg: 0 as Number,
-      md: 0 as Number,
-      sm: 0 as Number,
-      nbCols: 1 as Number,
-      gap: 0 as Number,
+      layoutBreakpointLarge: 0 as Number,
+      layoutBreakpointMedium: 0 as Number,
+      layoutBreakpointSmall: 0 as Number,
+      layoutNbColumns: 1 as Number,
+      layoutGutter: 0 as Number,
     };
   },
   methods: {
-    setMaxWidth(value: Number) {
-      this.maxWidth = value;
+    setLayoutMaxWidth(value: Number) {
+      this.layoutMaxWidth = value;
     },
     setlayoutPaddingX(value: Number) {
       this.layoutPaddingX = value;
@@ -59,31 +59,31 @@ export default {
     setlayoutPaddingY(value: Number) {
       this.layoutPaddingY = value;
     },
-    setNbCols(value: Number) {
-      this.nbCols = value;
+    setLayoutNbColumns(value: Number) {
+      this.layoutNbColumns = value;
     },
-    setGap(value: Number) {
-      this.gap = value;
+    setLayoutGutter(value: Number) {
+      this.layoutGutter = value;
     },
-    setLg(value: Number) {
-      this.lg = value;
+    setLayoutBreakpointLarge(value: Number) {
+      this.layoutBreakpointLarge = value;
     },
-    setMd(value: Number) {
-      this.md = value;
+    setLayoutBreakpointMedium(value: Number) {
+      this.layoutBreakpointMedium = value;
     },
-    setSm(value: Number) {
-      this.sm = value;
+    setLayoutBreakpointSmall(value: Number) {
+      this.layoutBreakpointSmall = value;
     },
     updateStore() {
       const store = useLayoutStore();
-      store.setMaxWidth(this.maxWidth);
+      store.setLayoutMaxWidth(this.layoutMaxWidth);
       store.setlayoutPaddingX(this.layoutPaddingX);
       store.setlayoutPaddingY(this.layoutPaddingY);  
-      store.setLg(this.lg);
-      store.setMd(this.md);
-      store.setSm(this.sm);
-      store.setNbCols(this.nbCols);
-      store.setGap(this.gap);  
+      store.setLayoutBreakpointLarge(this.layoutBreakpointLarge);
+      store.setLayoutBreakpointMedium(this.layoutBreakpointMedium);
+      store.setLayoutBreakpointSmall(this.layoutBreakpointSmall);
+      store.setLayoutNbColumns(this.layoutNbColumns);
+      store.setLayoutGutter(this.layoutGutter);  
     },
   },
 };

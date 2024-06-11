@@ -2,49 +2,49 @@ import { defineStore } from 'pinia';
 
 export const useLayoutStore = defineStore('layout', {
     state: () => ({
-        maxWidth: 0,
-        layoutPaddingX: 0,
-        layoutPaddingY: 0,
-        lg: 0,
-        md: 0,
-        sm: 0,
-        nbCols: 0,
-        gap: 0,
+        layoutMaxWidth: 0 as Number,
+        layoutPaddingX: 0 as Number,
+        layoutPaddingY: 0 as Number,
+        layoutBreakpointLarge: 0 as Number,
+        layoutBreakpointMedium: 0 as Number,
+        layoutBreakpointSmall: 0 as Number,
+        layoutNbColumns: 0 as Number,
+        layoutGutter: 0 as Number,
     }),
     getters: {
-        getMaxWidth: (state) => state.maxWidth,
-        getlayoutPaddingX: (state) => state.layoutPaddingX,
-        getlayoutPaddingY: (state) => state.layoutPaddingY,
-        getLg: (state) => state.lg,
-        getMd: (state) => state.md,
-        getSm: (state) => state.sm,
-        getNbCols: (state) => state.nbCols,
-        getGap: (state) => state.gap,
+        getLayoutMaxWidth: (state) => state.layoutMaxWidth,
+        getLayoutPaddingX: (state) => state.layoutPaddingX,
+        getLayoutPaddingY: (state) => state.layoutPaddingY,
+        getLayoutBreakpointLarge: (state) => state.layoutBreakpointLarge,
+        getLayoutBreakpointMedium: (state) => state.layoutBreakpointMedium,
+        getLayoutBreakpointSmall: (state) => state.layoutBreakpointSmall,
+        getLayoutNbColumns: (state) => state.layoutNbColumns,
+        getLayoutGutter: (state) => state.layoutGutter,
     },
     actions: {
-        setMaxWidth(value) {
-            this.maxWidth = value;
+        setLayoutMaxWidth(value: Number) {
+            this.layoutMaxWidth = value;
         },
-        setlayoutPaddingX(value) {
+        setLayoutPaddingX(value : Number) {
             this.layoutPaddingX = value;
         },
-        setlayoutPaddingY(value) {
+        setLayoutPaddingY(value : Number) {
             this.layoutPaddingY = value;
         },
-        setLg(value) {
-            this.lg = value;
+        setLayoutBreakpointLarge(value : Number) {
+            this.layoutBreakpointLarge = value;
         },
-        setMd(value) {
-            this.md = value;
+        setLayoutBreakpointMedium(value : Number) {
+            this.layoutBreakpointMedium = value;
         },
-        setSm(value) {
-            this.sm = value;
+        setLayoutBreakpointSmall(value : Number) {
+            this.layoutBreakpointSmall = value;
         },
-        setNbCols(value) {
-            this.nbCols = value;
+        setLayoutNbColumns(value : Number) {
+            this.layoutNbColumns = value;
         },
-        setGap(value) {
-            this.gap = value;
+        setLayoutGutter(value : Number) {
+            this.layoutGutter = value;
         },
     },
 });

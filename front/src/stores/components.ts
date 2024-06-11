@@ -2,20 +2,20 @@ import { defineStore } from 'pinia';
 
 export const useComponentsStore = defineStore('components', {
     state: () => ({
-        btnPaddingX: 0 as Number,
-        btnPaddingY: 0 as Number,
-        btnBorderRadius: 0 as Number,
-        btnFontSize: 0 as Number,
+        buttonPaddingX: 0 as Number,
+        buttonPaddingY: 0 as Number,
+        buttonBorderRadius: 0 as Number,
+        buttonFontSize: 0 as Number,
         inputPaddingX: 0 as Number,
         inputPaddingY: 0 as Number,
         inputBorderRadius: 0 as Number,
         inputFontSize: 0 as Number,
     }),
     getters: {
-        getBtnPaddingX: (state) => state.btnPaddingX,
-        getBtnPaddingY: (state) => state.btnPaddingY,
-        getBtnBorderRadius: (state) => state.btnBorderRadius,
-        getBtnFontSize: (state) => state.btnFontSize,
+        getButtonPaddingX: (state) => state.buttonPaddingX,
+        getButtonPaddingY: (state) => state.buttonPaddingY,
+        getButtonBorderRadius: (state) => state.buttonBorderRadius,
+        getButtonFontSize: (state) => state.buttonFontSize,
         getInputPaddingX: (state) => state.inputPaddingX,
         getInputPaddingY: (state) => state.inputPaddingY,
         getInputBorderRadius: (state) => state.inputBorderRadius,
@@ -23,17 +23,17 @@ export const useComponentsStore = defineStore('components', {
 
     },
     actions: {
-        setBtnPaddingX(value) {
-            this.btnPaddingX = value;
+        setButtonPaddingX(value) {
+            this.buttonPaddingX = value;
         },
-        setBtnPaddingY(value) {
-            this.btnPaddingY = value;
+        setButtonPaddingY(value) {
+            this.buttonPaddingY = value;
         },
-        setBtnBorderRadius(value) {
-            this.btnBorderRadius = value;
+        setButtonBorderRadius(value) {
+            this.buttonBorderRadius = value;
         },
-        setBtnFontSize(value) {
-            this.btnFontSize = value;
+        setButtonFontSize(value) {
+            this.buttonFontSize = value;
         },
         setInputPaddingX(value) {
             this.inputPaddingX = value;

@@ -2,86 +2,85 @@ import { defineStore } from 'pinia';
 
 export const useFontsStore = defineStore('fonts', {
     state: () => ({
-        titleFont: '' as String,
-        h1Size: 0 as Number,
-        h1Weight: '' as String,
-        h2Size: 0 as Number,
-        h2Weight: '' as String,
-        h3Size: 0 as Number,
-        h3Weight: '' as String,
-        h4Size: 0 as Number,
-        h4Weight: '' as String,
-        h5Size: 0 as Number,
-        h5Weight: '' as String,
-        h6Size: 0 as Number,
-        h6Weight: '' as String,
-        paragraphFont: '' as String,
-        paragraphSize: 0 as Number,
-            
+        titleFontFamily: '' as String,
+        h1FontSize: 0 as Number,
+        h1FontWeight: 0 as Number,
+        h2FontSize: 0 as Number,
+        h2FontWeight: 0 as Number,
+        h3FontSize: 0 as Number,
+        h3FontWeight: 0 as Number,
+        h4FontSize: 0 as Number,
+        h4FontWeight: 0 as Number,
+        h5FontSize: 0 as Number,
+        h5FontWeight: 0 as Number,
+        h6FontSize: 0 as Number,
+        h6FontWeight: 0 as Number,
+        textFontFamily: '' as String,
+        textFontSize: 0 as Number,
+
     }),
     getters: {
-        getTitleFont: (state) => state.titleFont,
-        getH1Size: (state) => state.h1Size,
-        getH1Weight: (state) => state.h1Weight,
-        getH2Size: (state) => state.h2Size,
-        getH2Weight: (state) => state.h2Weight,
-        getH3Size: (state) => state.h3Size,
-        getH3Weight: (state) => state.h3Weight,
-        getH4Size: (state) => state.h4Size,
-        getH4Weight: (state) => state.h4Weight,
-        getH5Size: (state) => state.h5Size,
-        getH5Weight: (state) => state.h5Weight,
-        getH6Size: (state) => state.h6Size,
-        getH6Weight: (state) => state.h6Weight,
-        getParagraphFont: (state) => state.paragraphFont,
-        getParagraphSize: (state) => state.paragraphSize,
-
+        getTitleFontFamily: (state) => state.titleFontFamily,
+        getH1FontSize: (state) => state.h1FontSize,
+        getH1FontWeight: (state) => state.h1FontWeight,
+        getH2FontSize: (state) => state.h2FontSize,
+        getH2FontWeight: (state) => state.h2FontWeight,
+        getH3FontSize: (state) => state.h3FontSize,
+        getH3FontWeight: (state) => state.h3FontWeight,
+        getH4FontSize: (state) => state.h4FontSize,
+        getH4FontWeight: (state) => state.h4FontWeight,
+        getH5FontSize: (state) => state.h5FontSize,
+        getH5FontWeight: (state) => state.h5FontWeight,
+        getH6FontSize: (state) => state.h6FontSize,
+        getH6FontWeight: (state) => state.h6FontWeight,
+        getTextFontFamily: (state) => state.textFontFamily,
+        getTextFontSize: (state) => state.textFontSize,
     },
     actions: {
-        setTitleFont(value) {  
-            this.titleFont = value;
+        setTitleFontFamily(value : String) {
+            this.titleFontFamily = value;
         },
-        setH1Size(value) {
-            this.h1Size = value;
+        setH1FontSize(value: Number) {
+            this.h1FontSize = value;
         },
-        setH1Weight(value) {
-            this.h1Weight = value;
+        setH1FontWeight(value: Number) {
+            this.h1FontWeight = value;
         },
-        setH2Size(value) {
-            this.h2Size = value;
+        setH2FontSize(value: Number) {
+            this.h2FontSize = value;
         },
-        setH2Weight(value) {
-            this.h2Weight = value;
+        setH2FontWeight(value: Number) {
+            this.h2FontWeight = value;
         },
-        setH3Size(value) {
-            this.h3Size = value;
+        setH3FontSize(value: Number) {
+            this.h3FontSize = value;
         },
-        setH3Weight(value) {
-            this.h3Weight = value;
+        setH3FontWeight(value: Number) {
+            this.h3FontWeight = value;
         },
-        setH4Size(value) {
-            this.h4Size = value;
+        setH4FontSize(value: Number) {
+            this.h4FontSize = value;
         },
-        setH4Weight(value) {
-            this.h4Weight = value;
+        setH4FontWeight(value: Number) {
+            this.h4FontWeight = value;
         },
-        setH5Size(value) {
-            this.h5Size = value;
+        setH5FontSize(value: Number) {
+            this.h5FontSize = value;
         },
-        setH5Weight(value) {
-            this.h5Weight = value;
+        setH5FontWeight(value: Number) {
+            this.h5FontWeight = value;
         },
-        setH6Size(value) {
-            this.h6Size = value;
+        setH6FontSize(value: Number) {
+            this.h6FontSize = value;
         },
-        setH6Weight(value) {
-            this.h6Weight = value;
+        setH6FontWeight(value: Number) {
+            this.h6FontWeight = value;
         },
-        setParagraphFont(value) {
-            this.paragraphFont = value;
+        setTextFontFamily(value: String) {
+            this.textFontFamily = value;
         },
-        setParagraphSize(value) {
-            this.paragraphSize = value;
+        setTextFontSize(value: Number) {
+            this.textFontSize = value;
         },
     },
 });

@@ -6,10 +6,10 @@
         <h2>Boutons</h2>
         <div> 
           <h3>Padding</h3>
-          <my-range @rangeValue="setBtnPaddingX" :label="'Horizontal'" :name="'btnPaddingX'" :min="0" :max="100" :step="10" :suffix="'px'" :value="btnPaddingX"></my-range>
-          <my-range @rangeValue="setBtnPaddingY" :label="'Vertical'" :name="'btnPaddingY'" :min="0" :max="100" :step="10" :suffix="'px'" :value="btnPaddingY"></my-range>
-          <my-range @rangeValue="setBtnBorderRadius" :label="'Arrondis'" :name="'btnBorderRadius'" :min="0" :max="50" :step="5" :suffix="'px'" :value="btnBorderRadius"></my-range>
-          <my-range @rangeValue="setBtnFontSize" :label="'Taille du texte'" :name="'btnFontSize'" :min="10" :max="30" :step="2" :suffix="'px'" :value="btnFontSize"></my-range>
+          <my-range @rangeValue="setButtonPaddingX" :label="'Horizontal'" :name="'buttonPaddingX'" :min="0" :max="100" :step="10" :suffix="'px'" :value="buttonPaddingX"></my-range>
+          <my-range @rangeValue="setButtonPaddingY" :label="'Vertical'" :name="'buttonPaddingY'" :min="0" :max="100" :step="10" :suffix="'px'" :value="buttonPaddingY"></my-range>
+          <my-range @rangeValue="setButtonBorderRadius" :label="'Arrondis'" :name="'buttonBorderRadius'" :min="0" :max="50" :step="5" :suffix="'px'" :value="buttonBorderRadius"></my-range>
+          <my-range @rangeValue="setButtonFontSize" :label="'Taille du texte'" :name="'buttonFontSize'" :min="10" :max="30" :step="2" :suffix="'px'" :value="buttonFontSize"></my-range>
         </div>
       </section>
       <section>
@@ -38,10 +38,10 @@ export default {
   name: 'Components',
   data() {
     return {
-      btnPaddingX: 0 as Number,
-      btnPaddingY: 0 as Number,
-      btnBorderRadius: 0 as Number,
-      btnFontSize: 10 as Number,
+      buttonPaddingX: 0 as Number,
+      buttonPaddingY: 0 as Number,
+      buttonBorderRadius: 0 as Number,
+      buttonFontSize: 10 as Number,
       inputPaddingX: 0 as Number,
       inputPaddingY: 0 as Number,
       inputBorderRadius: 0 as Number,
@@ -49,17 +49,17 @@ export default {
     };
   },
   methods: {
-    setBtnPaddingX(value: Number) {
-      this.btnPaddingX = value;
+    setButtonPaddingX(value: Number) {
+      this.buttonPaddingX = value;
     },
-    setBtnPaddingY(value: Number) {
-      this.BtnPaddingY = value;
+    setButtonPaddingY(value: Number) {
+      this.buttonPaddingY = value;
     },
-    setBtnBorderRadius(value: Number) {
-      this.btnBorderRadius = value;
+    setButtonBorderRadius(value: Number) {
+      this.buttonBorderRadius = value;
     },
-    setBtnFontSize(value: Number) {
-      this.btnFontSize = value;
+    setButtonFontSize(value: Number) {
+      this.buttonFontSize = value;
     },
     setInputPaddingX(value: Number) {
       this.inputPaddingX = value;
@@ -75,10 +75,10 @@ export default {
     },
     updateStore() {
       const store = useComponentsStore();
-      store.setBtnPaddingX(this.btnPaddingX);
-      store.setBtnPaddingY(this.BtnPaddingY);
-      store.setBtnBorderRadius(this.btnBorderRadius);
-      store.setBtnFontSize(this.btnFontSize);
+      store.setButtonPaddingX(this.buttonPaddingX);
+      store.setButtonPaddingY(this.buttonPaddingY);
+      store.setButtonBorderRadius(this.buttonBorderRadius);
+      store.setButtonFontSize(this.buttonFontSize);
       store.setInputPaddingX(this.inputPaddingX);
       store.setInputPaddingY(this.inputPaddingY);
       store.setInputBorderRadius(this.inputBorderRadius);
