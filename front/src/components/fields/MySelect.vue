@@ -21,12 +21,11 @@ export default {
         options: {
             type: Array,
             required: false
-        }
+        },
     },
     methods: {
         updateValue(event) {
             this.$emit('selectValue', event.target.value);
-            console.log(event.target.value);
         }
     }
 }

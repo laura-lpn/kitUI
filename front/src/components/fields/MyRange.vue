@@ -41,7 +41,7 @@ export default {
     },
     methods: {
         updateValue(event) {
-            this.$emit('rangeValue', event.target.value);
+            this.$emit('rangeValue', Number(event.target.value));
         }
     }
 }

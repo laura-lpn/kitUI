@@ -5,7 +5,7 @@
       <section>
         <h2>Couleur sombre</h2>
         <div>
-          <my-color-picker @colorValue="setColorDarkBase" :label="'Base'" :name="'colorDarkBase'"></my-color-picker>
+          <my-color-picker @colorValue="setColorDarkBase" :label="'Base'" :name="'colorDarkBase'" :value="colorDarkBase"></my-color-picker>
           <div :style="`background-color: ${colorDarkDarker}; width: 24px; height: 24px;`">
           </div>
           <div :style="`background-color: ${colorDarkLighter}; width: 24px; height: 24px;`">
@@ -15,7 +15,7 @@
       <section>
         <h2>Couleur claire</h2>
         <div>
-          <my-color-picker @colorValue="setColorLightBase" :label="'Base'" :name="'colorLightBase'"></my-color-picker>
+          <my-color-picker @colorValue="setColorLightBase" :label="'Base'" :name="'colorLightBase'" :value="colorLightBase"></my-color-picker>
           <div :style="`background-color: ${colorLightDarker}; width: 24px; height: 24px;`">
           </div>
           <div :style="`background-color: ${colorLightLighter}; width: 24px; height: 24px;`">
@@ -25,7 +25,7 @@
       <section>
         <h2>Couleur d'accent</h2>
         <div>
-          <my-color-picker @colorValue="setAccentColor" :label="''" :name="'accentColor'"></my-color-picker>
+          <my-color-picker @colorValue="setAccentColor" :name="'accentColor'" :value="accentColor"></my-color-picker>
         </div>
       </section>
       <my-button :id="'previousButton'" :value="'Précédent'" @click="previousStep"></my-button>
@@ -54,6 +54,16 @@ export default {
     };
   },
   emits:['next', 'previous'],
+  mounted(){
+    const store = useColorsStore();
+    this.colorLightBase = store.getColorLightBase
+    this.colorDarkBase = store.getColorDarkBase
+    this.accentColor = store.getAccentColor
+    this.colorDarkDarker = store.getColorDarkDarker
+    this.colorDarkLighter = store.getColorDarkLighter
+    this.colorLightDarker = store.getColorLightDarker
+    this.colorLightLighter = store.getColorLightLighter
+  },
   methods: {
     setColorLightBase(value: String) {
       this.colorLightBase = value;

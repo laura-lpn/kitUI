@@ -1,7 +1,7 @@
 <template>
     <div>
         <label :for="name">{{ label }}</label>
-        <input type="number" :name="name" :id="name" @input="updateValue">
+        <input type="number" :name="name" :id="name" @input="updateValue" :value="value">
         <span>{{ suffix }}</span>
     </div>
 </template>
@@ -22,10 +22,14 @@ export default {
             type: String,
             default: 'px'
         },
+        value: {
+            type: Number,
+            required: true
+        }
     },
     methods: {
         updateValue(event) {
-            this.$emit('inputValue', event.target.value);
+            this.$emit('inputValue', Number(event.target.value));
         }
     }
 }

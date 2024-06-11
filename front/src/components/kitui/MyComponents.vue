@@ -121,6 +121,17 @@ export default {
     }
   },
   emits: ['next', 'previous'],
+  mounted() {
+    const store = useComponentsStore()
+    this.buttonPaddingX = store.getButtonPaddingX
+    this.buttonPaddingY = store.getButtonPaddingY
+    this.buttonBorderRadius = store.getButtonBorderRadius
+    this.buttonFontSize = store.getButtonFontSize
+    this.inputPaddingX = store.getInputPaddingX
+    this.inputPaddingY = store.getInputPaddingY
+    this.inputBorderRadius = store.getInputBorderRadius
+    this.inputFontSize = store.getInputFontSize
+  },
   methods: {
     setButtonPaddingX(value: Number) {
       this.buttonPaddingX = value

@@ -6,43 +6,44 @@
         <h2>Titres</h2>
         <div> 
           <my-select @selectValue="setTitleFontFamily" :label="'Police'" :name="'titleFontFamily'" :options="fonts"></my-select>
+          {{ titleFontFamily }}
           <h4>Titre 1</h4>
           <div>
-            <my-input @inputValue="setH1FontSize" :label="'Taille'" :name="'h1FontSize'" ></my-input>
-            <my-select @selectValue="setH1FontWeight" :label="'Graisse'" :name="'h1FontWeight'" :options="FontWeights"></my-select>
+            <my-input @inputValue="setH1FontSize" :label="'Taille'" :name="'h1FontSize'" :value="h1FontSize"></my-input>
+            <my-select @selectValue="setH1FontWeight" :label="'Graisse'" :name="'h1FontWeight'" :options="FontWeights" :value="h1FontWeight"></my-select>
           </div>
           <h4>Titre 2</h4>
           <div>
-            <my-input @inputValue="setH2FontSize" :label="'Taille'" :name="'h2FontSize'"></my-input>
-            <my-select @selectValue="setH2FontWeight" :label="'Graisse'" :name="'h2FontWeight'" :options="FontWeights"></my-select>
+            <my-input @inputValue="setH2FontSize" :label="'Taille'" :name="'h2FontSize'" :value="h2FontSize"></my-input>
+            <my-select @selectValue="setH2FontWeight" :label="'Graisse'" :name="'h2FontWeight'" :options="FontWeights" :value="h2FontWeight"></my-select>
           </div>
           <h4>Titre 3</h4>
           <div>
-            <my-input @inputValue="setH3FontSize" :label="'Taille'" :name="'h3FontSize'"></my-input>
-            <my-select @selectValue="setH3FontWeight" :label="'Graisse'" :name="'h3FontWeight'" :options="FontWeights"></my-select>
+            <my-input @inputValue="setH3FontSize" :label="'Taille'" :name="'h3FontSize'" :value="h3FontSize"></my-input>
+            <my-select @selectValue="setH3FontWeight" :label="'Graisse'" :name="'h3FontWeight'" :options="FontWeights" :value="h3FontWeight"></my-select>
           </div>
           <h4>Titre 4</h4>
           <div>
-            <my-input @inputValue="setH4FontSize" :label="'Taille'" :name="'h4FontSize'"></my-input>
-            <my-select @selectValue="setH4FontWeight" :label="'Graisse'" :name="'h4FontWeight'" :options="FontWeights"></my-select>
+            <my-input @inputValue="setH4FontSize" :label="'Taille'" :name="'h4FontSize'" :value="h4FontSize"></my-input>
+            <my-select @selectValue="setH4FontWeight" :label="'Graisse'" :name="'h4FontWeight'" :options="FontWeights" :value="h4FontWeight"></my-select>
           </div>
           <h4>Titre 5</h4>
           <div>
-            <my-input @inputValue="setH5FontSize" :label="'Taille'" :name="'h5FontSize'"></my-input>
-            <my-select @selectValue="setH5FontWeight" :label="'Graisse'" :name="'h5FontWeight'" :options="FontWeights"></my-select>
+            <my-input @inputValue="setH5FontSize" :label="'Taille'" :name="'h5FontSize'" :value="h5FontSize"></my-input>
+            <my-select @selectValue="setH5FontWeight" :label="'Graisse'" :name="'h5FontWeight'" :options="FontWeights" :value="h5FontWeight"></my-select>
           </div>
           <h4>Titre 6</h4>
           <div>
-            <my-input @inputValue="setH6FontSize" :label="'Taille'" :name="'h6FontSize'"></my-input>
-            <my-select @selectValue="setH6FontWeight" :label="'Graisse'" :name="'h6FontWeight'" :options="FontWeights"></my-select>
+            <my-input @inputValue="setH6FontSize" :label="'Taille'" :name="'h6FontSize'" :value="h6FontSize"></my-input>
+            <my-select @selectValue="setH6FontWeight" :label="'Graisse'" :name="'h6FontWeight'" :options="FontWeights" :value="h6FontWeight"></my-select>
           </div>
         </div>
       </section>
       <section>
         <h2>Textes</h2>
         <div>
-          <my-select @selectValue="setTextFontFamily" :label="'Police'" :name="'textFontFamily'" :options="fonts"></my-select>
-          <my-input @inputValue="setTextFontSize" :label="'Taille'" :name="'textFontSize'"></my-input>
+          <my-select @selectValue="setTextFontFamily" :label="'Police'" :name="'textFontFamily'" :options="fonts" :value="textFontFamily"></my-select>
+          <my-input @inputValue="setTextFontSize" :label="'Taille'" :name="'textFontSize'" :value="textFontSize"></my-input>
         </div>
       </section>
       <my-button :id="'previousButton'" :value="'Précédent'" @click="previousStep"></my-button>
@@ -85,22 +86,40 @@ export default {
         { name: '800', value: '800' },
         { name: '900', value: '900' },
       ],
-      titleFontFamily: 'Arial',
-      h1FontSize: 16,
-      h1FontWeight: 400,
-      h2FontSize: 14,
-      h2FontWeight: 400,
-      h3FontSize: 12,
-      h3FontWeight: 400,
-      h4FontSize: 10,
-      h4FontWeight: 400,
-      h5FontSize: 8,
-      h5FontWeight: 400,
-      h6FontSize: 6,
-      h6FontWeight: 400,
-      textFontFamily: 'Arial',
-      textFontSize: 12,
+      titleFontFamily: 'Arial' as String,
+      h1FontSize: 16 as Number,
+      h1FontWeight: 400 as Number,
+      h2FontSize: 14 as Number,
+      h2FontWeight: 400 as Number,
+      h3FontSize: 12 as Number,
+      h3FontWeight: 400 as Number,
+      h4FontSize: 10 as Number,
+      h4FontWeight: 400 as Number,
+      h5FontSize: 8 as Number,
+      h5FontWeight: 400 as Number,
+      h6FontSize: 6 as Number,
+      h6FontWeight: 400 as Number,
+      textFontFamily: 'Arial' as String,
+      textFontSize: 12 as Number,
     };
+  },
+  created() {
+    const store = useFontsStore();
+    this.titleFontFamily = store.getTitleFontFamily;
+    this.h1FontSize = store.getH1FontSize;
+    this.h1FontWeight = store.getH1FontWeight;
+    this.h2FontSize = store.getH2FontSize;
+    this.h2FontWeight = store.getH2FontWeight;
+    this.h3FontSize = store.getH3FontSize;
+    this.h3FontWeight = store.getH3FontWeight;
+    this.h4FontSize = store.getH4FontSize;
+    this.h4FontWeight = store.getH4FontWeight;
+    this.h5FontSize = store.getH5FontSize;
+    this.h5FontWeight = store.getH5FontWeight;
+    this.h6FontSize = store.getH6FontSize;
+    this.h6FontWeight = store.getH6FontWeight;
+    this.textFontFamily = store.getTextFontFamily;
+    this.textFontSize = store.getTextFontSize;
   },
   emits:['next', 'previous'],
   methods: {

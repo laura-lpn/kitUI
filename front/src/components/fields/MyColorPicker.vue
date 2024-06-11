@@ -1,7 +1,7 @@
 <template>
     <div>
         <label :for="name">{{ label }}</label>
-        <input type="color" :name="name" :id="name" @input="updateValue">
+        <input type="color" :name="name" :id="name" @input="updateValue" :value="value">
     </div>
 </template>
 <script>
@@ -16,10 +16,13 @@ export default {
             type: String,
             required: true
         },
+        value: {
+            type: String,
+            required: true
+        }
     },
     methods: {
         updateValue(event) {
-            this.$emit('colorValue', event.target.value);
             console.log(event.target.value);
         }
     }
