@@ -4,58 +4,58 @@ async function create(newKitui) {
   try {
     const styleRoot = `
     :root {
-      --layout-max-width : ${newKitui.layoutMaxWidth}px;
-      --layout-padding-x : ${newKitui.layoutPaddingX}px;
-      --layout-padding-y : ${newKitui.layoutPaddingY}px;
-      --layout-nb-columns : ${newKitui.layoutNumColumns};
-      --layout-gutter : ${newKitui.layoutGutter}px;
+      --layout-max-width : ${newKitui.layout.maxWidth}px;
+      --layout-padding-x : ${newKitui.layout.padding.x}px;
+      --layout-padding-y : ${newKitui.layout.padding.y}px;
+      --layout-nb-columns : ${newKitui.layout.numColumns};
+      --layout-gutter : ${newKitui.layout.gutter}px;
 
-      --color-dark-base : ${newKitui.colorDarkBase};
-      --color-dark-lighter : ${newKitui.colorDarkLighter};
-      --color-dark-darker : ${newKitui.colorDarkDarker};
-      --color-light-base : ${newKitui.colorLightBase};
-      --color-light-lighter : ${newKitui.colorLightLighter};
-      --color-light-darker : ${newKitui.colorLightDarker};
-      --color-accent : ${newKitui.colorAccent};
+      --color-dark-base : ${newKitui.colors.dark.base};
+      --color-dark-lighter : ${newKitui.colors.dark.lighter};
+      --color-dark-darker : ${newKitui.colors.dark.darker};
+      --color-light-base : ${newKitui.colors.light.base};
+      --color-light-lighter : ${newKitui.colors.light.lighter};
+      --color-light-darker : ${newKitui.colors.light.darker};
+      --color-accent : ${newKitui.colors.accent};
 
-      --title-font-family : '${newKitui.titleFontFamily}', sans-serif;
-      --h1-font-size : ${newKitui.h1FontSize}px;
-      --h1-font-weight : ${newKitui.h1FontWeight};
-      --h2-font-size : ${newKitui.h2FontSize}px;
-      --h2-font-weight : ${newKitui.h2FontWeight};
-      --h3-font-size : ${newKitui.h3FontSize}px;
-      --h3-font-weight : ${newKitui.h3FontWeight};
-      --h4-font-size : ${newKitui.h4FontSize}px;
-      --h4-font-weight : ${newKitui.h4FontWeight};
-      --h5-font-size : ${newKitui.h5FontSize}px;
-      --h5-font-weight : ${newKitui.h5FontWeight};
-      --h6-font-size : ${newKitui.h6FontSize}px;
-      --h6-font-weight : ${newKitui.h6FontWeight};
+      --title-font-family : '${newKitui.typography.fontFamily.title}', sans-serif;
+      --h1-font-size : ${newKitui.typography.style.h1.size}px;
+      --h1-font-weight : ${newKitui.typography.style.h1.weight};
+      --h2-font-size : ${newKitui.typography.style.h2.size}px;
+      --h2-font-weight : ${newKitui.typography.style.h2.weight};
+      --h3-font-size : ${newKitui.typography.style.h3.size}px;
+      --h3-font-weight : ${newKitui.typography.style.h3.weight};
+      --h4-font-size : ${newKitui.typography.style.h4.size}px;
+      --h4-font-weight : ${newKitui.typography.style.h4.weight};
+      --h5-font-size : ${newKitui.typography.style.h5.size}px;
+      --h5-font-weight : ${newKitui.typography.style.h5.weight};
+      --h6-font-size : ${newKitui.typography.style.h6.size}px;
+      --h6-font-weight : ${newKitui.typography.style.h6.weight};
 
-      --text-font-family : '${newKitui.textFontFamily}', sans-serif;
-      --text-font-size : ${newKitui.textFontSize}px;
+      --text-font-family : '${newKitui.typography.fontFamily.text}', sans-serif;
+      --text-font-size : ${newKitui.typography.style.text}px;
 
-      --button-padding-x : ${newKitui.buttonPaddingX}px;
-      --button-padding-y : ${newKitui.buttonPaddingY}px;
-      --button-border-radius : ${newKitui.buttonBorderRadius}px;
-      --button-font-size : ${newKitui.buttonFontSize}px;
-      --button-color-text: ${newKitui.buttonColorText};
+      --button-padding-x : ${newKitui.buttons.padding.x}px;
+      --button-padding-y : ${newKitui.buttons.padding.y}px;
+      --button-border-radius : ${newKitui.buttons.borderRadius}px;
+      --button-font-size : ${newKitui.buttons.fontSize}px;
+      --button-color-text: ${newKitui.buttons.colorText};
 
-      --input-padding-x : ${newKitui.inputPaddingX}px;
-      --input-padding-y : ${newKitui.inputPaddingY}px;
-      --input-border-radius : ${newKitui.inputBorderRadius}px;
-      --input-font-size : ${newKitui.inputFontSize}px;
+      --input-padding-x : ${newKitui.inputs.padding.x}px;
+      --input-padding-y : ${newKitui.inputs.padding.y}px;
+      --input-border-radius : ${newKitui.inputs.borderRadius}px;
+      --input-font-size : ${newKitui.inputs.fontSize}px;
 
-      --card-padding-x : ${newKitui.cardPaddingX}px;
-      --card-padding-y : ${newKitui.cardPaddingY}px;
-      --card-border-radius : ${newKitui.cardBorderRadius}px;
+      --card-padding-x : ${newKitui.cards.padding.x}px;
+      --card-padding-y : ${newKitui.cards.padding.y}px;
+      --card-border-radius : ${newKitui.cards.borderRadius}px;
   }
   `
 
   const breakpoints = () => {
     let styles = '';
   
-    for (let i = 1; i <= newKitui.layoutNumColumns; i++) {
+    for (let i = 1; i <= newKitui.layout.numColumns; i++) {
       styles += `
         .col-${i} {
           grid-column: span ${i};
@@ -63,11 +63,11 @@ async function create(newKitui) {
       `;
     }
   
-    newKitui.layoutBreakpoints.forEach((breakpoint) => {
+    newKitui.layout.breakpoints.forEach((breakpoint) => {
       styles += `
         @media screen and (min-width: ${breakpoint.value}px) {
       `;
-      for (let i = 1; i <= newKitui.layoutNumColumns; i++) {
+      for (let i = 1; i <= newKitui.layout.numColumns; i++) {
         styles += `
           .col-${breakpoint.name}-${i} {
             grid-column: span ${i};
