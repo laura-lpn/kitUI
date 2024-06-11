@@ -105,7 +105,7 @@ async function create(newKitui) {
 
   // renvoyer au front le fichier css généré
 
-  return true;
+return "http://localhost:3000/template.css";
 
   } catch (error) {
     console.error('Error in kituiService.create', error);
