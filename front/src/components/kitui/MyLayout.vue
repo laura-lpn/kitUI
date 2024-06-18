@@ -1,95 +1,97 @@
 <template>
-  <div>
+  <div class="flex flex-col justify-center items-center px-8">
     <h1>Layout</h1>
-    <div>
-      <section>
-        <h2>Conteneur</h2>
-        <div>
-          <my-range
-            @rangeValue="setLayoutMaxWidth"
-            :label="'Max-width'"
-            :name="'layoutMaxWidth'"
-            :min="800"
-            :max="2000"
-            :step="100"
-            :suffix="'px'"
-            :value="layoutMaxWidth"
-          ></my-range>
+    <section class="flex">
+      <div>
+        <section>
+          <h2>Conteneur</h2>
           <div>
-            <h3>Padding</h3>
             <my-range
-              @rangeValue="setLayoutPaddingX"
-              :label="'Horizontal'"
-              :name="'layoutPaddingX'"
-              :min="0"
-              :max="100"
-              :step="10"
+              @rangeValue="setLayoutMaxWidth"
+              :label="'Max-width'"
+              :name="'layoutMaxWidth'"
+              :min="800"
+              :max="2000"
+              :step="100"
               :suffix="'px'"
-              :value="layoutPaddingX"
+              :value="layoutMaxWidth"
+            ></my-range>
+            <div>
+              <h3>Padding</h3>
+              <my-range
+                @rangeValue="setLayoutPaddingX"
+                :label="'Horizontal'"
+                :name="'layoutPaddingX'"
+                :min="0"
+                :max="100"
+                :step="10"
+                :suffix="'px'"
+                :value="layoutPaddingX"
+              ></my-range>
+              <my-range
+                @rangeValue="setLayoutPaddingY"
+                :label="'Vertical'"
+                :name="'layoutPaddingY'"
+                :min="0"
+                :max="100"
+                :step="10"
+                :suffix="'px'"
+                :value="layoutPaddingY"
+              ></my-range>
+            </div>
+          </div>
+        </section>
+        <section>
+          <h2>Grille reponsive</h2>
+          <div>
+            <my-input
+              @inputValue="setLayoutBreakpointLarge"
+              :label="'Large'"
+              :name="'layoutBreakpointLarge'"
+              :suffix="'px'"
+              :value="layoutBreakpointLarge"
+            ></my-input>
+            <my-input
+              @inputValue="setLayoutBreakpointMedium"
+              :label="'Medium'"
+              :name="'layoutBreakpointMedium'"
+              :suffix="'px'"
+              :value="layoutBreakpointMedium"
+            ></my-input>
+            <my-input
+              @inputValue="setLayoutBreakpointSmall"
+              :label="'layoutBreakpointSmall'"
+              :name="'layoutBreakpointSmall'"
+              :suffix="'px'"
+              :value="layoutBreakpointSmall"
+            ></my-input>
+            <my-range
+              @rangeValue="setLayoutNbColumns"
+              :label="'Nombre de colonnes (max 12)'"
+              :name="'layoutNbColumns'"
+              :min="1"
+              :max="12"
+              :step="1"
+              :value="layoutNbColumns"
             ></my-range>
             <my-range
-              @rangeValue="setLayoutPaddingY"
-              :label="'Vertical'"
-              :name="'layoutPaddingY'"
+              @rangeValue="setLayoutGutter"
+              :label="'Espacement'"
+              :name="'layoutGutter'"
               :min="0"
-              :max="100"
-              :step="10"
+              :max="80"
+              :step="4"
               :suffix="'px'"
-              :value="layoutPaddingY"
+              :value="layoutGutter"
             ></my-range>
           </div>
-        </div>
-      </section>
-      <section>
-        <h2>Grille reponsive</h2>
-        <div>
-          <my-input
-            @inputValue="setLayoutBreakpointLarge"
-            :label="'Large'"
-            :name="'layoutBreakpointLarge'"
-            :suffix="'px'"
-            :value="layoutBreakpointLarge"
-          ></my-input>
-          <my-input
-            @inputValue="setLayoutBreakpointMedium"
-            :label="'Medium'"
-            :name="'layoutBreakpointMedium'"
-            :suffix="'px'"
-            :value="layoutBreakpointMedium"
-          ></my-input>
-          <my-input
-            @inputValue="setLayoutBreakpointSmall"
-            :label="'layoutBreakpointSmall'"
-            :name="'layoutBreakpointSmall'"
-            :suffix="'px'"
-            :value="layoutBreakpointSmall"
-          ></my-input>
-          <my-range
-            @rangeValue="setLayoutNbColumns"
-            :label="'Nombre de colonnes (max 12)'"
-            :name="'layoutNbColumns'"
-            :min="1"
-            :max="12"
-            :step="1"
-            :value="layoutNbColumns"
-          ></my-range>
-          <my-range
-            @rangeValue="setLayoutGutter"
-            :label="'Espacement'"
-            :name="'layoutGutter'"
-            :min="0"
-            :max="80"
-            :step="4"
-            :suffix="'px'"
-            :value="layoutGutter"
-          ></my-range>
-        </div>
-      </section>
-      <my-button :id="'nextButton'" :value="'Suivant'" @click="nextStep"></my-button>
-    </div>
-    <div>
-      <h1>Rendu</h1>
-    </div>
+        </section>
+      </div>
+      <div class="hidden md:flex">
+        <h1>Rendu</h1>
+      </div>
+    </section>
+    <my-button :id="'nextButton'" :value="'Suivant'" @click="nextStep"></my-button>
   </div>
 </template>
 

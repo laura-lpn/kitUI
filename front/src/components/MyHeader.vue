@@ -7,7 +7,7 @@
   flex justify-center items-center
   ">
     <RouterLink :to="{ name: 'home'}" title="Accueil" class="hover:animate-pulse z-[100]">
-      <img src="/logo.svg" alt="logo KitUI" class="h-16 lg:h-20">
+      <img src="/logo.svg" alt="logo KitUI" class="h-16">
     </RouterLink>
   </header>
 </template>
