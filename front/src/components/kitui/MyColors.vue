@@ -54,7 +54,7 @@ export default {
     };
   },
   emits:['next', 'previous'],
-  created() {
+  mounted() {
     const store = useColorsStore();
     this.colorLightBase = store.getColorLightBase
     this.colorDarkBase = store.getColorDarkBase

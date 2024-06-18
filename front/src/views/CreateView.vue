@@ -8,10 +8,14 @@
       <div :class="{ active: currentStep === 5 }">5</div>
     </div>
     <my-layout v-if="currentStep === 1" @next="nextStep"></my-layout>
-    <my-colors  v-if="currentStep === 2" @previous="previousStep" @next="nextStep"></my-colors>
-    <my-fonts  v-if="currentStep === 3" @previous="previousStep" @next="nextStep"></my-fonts>
-    <my-components v-if="currentStep === 4" @previous="previousStep" @next="nextStep"></my-components>
-    <my-cards  v-if="currentStep === 5" @previous="previousStep"></my-cards>
+    <my-colors v-if="currentStep === 2" @previous="previousStep" @next="nextStep"></my-colors>
+    <my-fonts v-if="currentStep === 3" @previous="previousStep" @next="nextStep"></my-fonts>
+    <my-components
+      v-if="currentStep === 4"
+      @previous="previousStep"
+      @next="nextStep"
+    ></my-components>
+    <my-cards v-if="currentStep === 5" @previous="previousStep" @finish="sendKit"></my-cards>
   </div>
 </template>
 <script>
@@ -20,6 +24,12 @@ import MyColors from '../components/kitui/MyColors.vue'
 import MyFonts from '../components/kitui/MyFonts.vue'
 import MyComponents from '@/components/kitui/MyComponents.vue'
 import MyCards from '@/components/kitui/MyCards.vue'
+import { useCardsStore } from '@/stores/cards'
+import { useLayoutStore } from '@/stores/layout'
+import { useColorsStore } from '@/stores/colors'
+import { useFontsStore } from '@/stores/fonts'
+import { useComponentsStore } from '@/stores/components'
+import router from '@/router'
 export default {
   name: 'CreateView',
   data() {
@@ -45,6 +55,112 @@ export default {
         this.currentStep--;
       }
     },
-  },
+    async sendKit() {
+      console.log('send kit')
+
+      try {
+        const response = await fetch('http://127.0.0.1:3000/api/kitui', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({
+            "layout": {
+              "maxWidth": useLayoutStore().layoutMaxWidth,
+              "padding": {
+                "x": useLayoutStore().layoutPaddingX,
+                "y": useLayoutStore().layoutPaddingY
+              },
+              "numColumns": useLayoutStore().layoutNbColumns,
+              "gutter": useLayoutStore().layoutGutter,
+              "breakpoints": [
+                { "name": "md", "value": useLayoutStore().layoutBreakpointSmall },
+                { "name": "lg", "value": useLayoutStore().layoutBreakpointMedium },
+                { "name": "xl", "value": useLayoutStore().layoutBreakpointLarge }
+              ]
+            },
+            "colors": {
+              "dark": {
+                "base": useColorsStore().colorDarkBase,
+                "lighter": useColorsStore().colorDarkLighter,
+                "darker": useColorsStore().colorDarkDarker
+              },
+              "light": {
+                "base": useColorsStore().colorLightBase,
+                "lighter": useColorsStore().colorLightLighter,
+                "darker": useColorsStore().colorLightDarker
+              },
+              "accent": useColorsStore().accentColor
+            },
+            "typography": {
+              "fontFamily": {
+                "title": useFontsStore().titleFontFamily,
+                "text": useFontsStore().textFontFamily
+              },
+              "style": {
+                "h1": {
+                  "size": useFontsStore().h1FontSize,
+                  "weight": useFontsStore().h1FontWeight
+                },
+                "h2": {
+                  "size": useFontsStore().h2FontSize,
+                  "weight": useFontsStore().h2FontWeight
+                },
+                "h3": {
+                  "size": useFontsStore().h3FontSize,
+                  "weight": useFontsStore().h3FontWeight
+                },
+                "h4": {
+                  "size": useFontsStore().h4FontSize,
+                  "weight": useFontsStore().h4FontWeight
+                },
+                "h5": {
+                  "size": useFontsStore().h5FontSize,
+                  "weight": useFontsStore().h5FontWeight
+                },
+                "h6": {
+                  "size": useFontsStore().h6FontSize,
+                  "weight": useFontsStore().h6FontWeight
+                },
+                "text": useFontsStore().textFontSize
+              }
+            },
+            "buttons": {
+              "padding": {
+                "x": useComponentsStore().buttonPaddingX,
+                "y": useComponentsStore().buttonPaddingY
+              },
+              "borderRadius": useComponentsStore().buttonBorderRadius,
+              "fontSize": useComponentsStore().buttonFontSize,
+              "colorText": useComponentsStore().buttonColorText,
+            },
+            "inputs": {
+              "padding": {
+                "x": useComponentsStore().inputPaddingX,
+                "y": useComponentsStore().inputPaddingY
+              },
+              "borderRadius": useComponentsStore().inputBorderRadius,
+              "fontSize": useComponentsStore().inputFontSize,
+            },
+            "cards": {
+              "padding": {
+                "x": useCardsStore().cardPaddingX,
+                "y": useCardsStore().cardPaddingY
+              },
+              "borderRadius": useCardsStore().cardBorderRadius
+            }
+          })
+        })
+        if(response.ok) {
+          console.log('Kit UI envoyé')
+          router.push({ name: 'Preview' })
+        }
+
+
+      } catch (error) {
+        console.error(error);
+      }
+    }
+  }
 }
 </script>

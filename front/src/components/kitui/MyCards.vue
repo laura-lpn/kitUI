@@ -39,7 +39,7 @@
         </div>
       </section>
       <my-button :id="'previousButton'" :value="'Précédent'" @click="previousStep"></my-button>
-      <my-button :id="'download'" :value="'Télécharger'" @click=""></my-button>
+      <my-button :id="'download'" :value="'Terminer'" @click="finishStep"></my-button>
     </div>
     <div>
       <h1>Rendu</h1>
@@ -51,7 +51,7 @@
 import { useCardsStore } from '@/stores/cards'
 
 export default {
-  name: 'Cards',
+  name: 'MyCards',
   data() {
     return {
       cardPaddingX: 0 as Number,
@@ -59,7 +59,13 @@ export default {
       cardBorderRadius: 0 as Number
     }
   },
-  emits: ['previous'],
+  emits: ['previous', 'finish'],
+  mounted() {
+    const store = useCardsStore()
+    this.cardPaddingX = store.getCardPaddingX
+    this.cardPaddingY = store.getCardPaddingY
+    this.cardBorderRadius = store.getCardBorderRadius
+  },
   methods: {
     setCardPaddingX(value: Number) {
       this.cardPaddingX = value
@@ -80,6 +86,10 @@ export default {
     previousStep() {
       this.updateStore();
       this.$emit('previous');
+    },
+    finishStep() {
+      this.updateStore();
+      this.$emit('finish');
     }
   }
 }

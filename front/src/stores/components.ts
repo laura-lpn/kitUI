@@ -6,6 +6,7 @@ export const useComponentsStore = defineStore('components', {
         buttonPaddingY: 0 as Number,
         buttonBorderRadius: 0 as Number,
         buttonFontSize: 0 as Number,
+        buttonColorText: '' as String,
         inputPaddingX: 0 as Number,
         inputPaddingY: 0 as Number,
         inputBorderRadius: 0 as Number,
@@ -16,6 +17,7 @@ export const useComponentsStore = defineStore('components', {
         getButtonPaddingY: (state) => state.buttonPaddingY,
         getButtonBorderRadius: (state) => state.buttonBorderRadius,
         getButtonFontSize: (state) => state.buttonFontSize,
+        getButtonColorText: (state) => state.buttonColorText,
         getInputPaddingX: (state) => state.inputPaddingX,
         getInputPaddingY: (state) => state.inputPaddingY,
         getInputBorderRadius: (state) => state.inputBorderRadius,
@@ -34,6 +36,9 @@ export const useComponentsStore = defineStore('components', {
         },
         setButtonFontSize(value) {
             this.buttonFontSize = value;
+        },
+        setButtonColorText(value) {
+            this.buttonColorText = value;
         },
         setInputPaddingX(value) {
             this.inputPaddingX = value;

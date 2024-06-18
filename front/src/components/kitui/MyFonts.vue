@@ -60,14 +60,14 @@
 import { useFontsStore } from '@/stores/fonts';
 
 export default {
-  name: 'Layout',
+  name: 'MyFont',
   data() {
     return {
       fonts: [
         { name: 'Arial', value: 'Arial' },
-        { name: 'Verdana', value: 'Verdana' },
+        { name: 'Roboto', value: 'Roboto' },
         { name: 'Helvetica', value: 'Helvetica' },
-        { name: 'Tahoma', value: 'Tahoma' },
+        { name: 'Lato', value: 'Lato' },
         { name: 'Trebuchet MS', value: 'Trebuchet MS' },
         { name: 'Times New Roman', value: 'Times New Roman' },
         { name: 'Georgia', value: 'Georgia' },
@@ -103,7 +103,7 @@ export default {
       textFontSize: 12 as Number,
     };
   },
-  created() {
+  mounted() {
     const store = useFontsStore();
     this.titleFontFamily = store.getTitleFontFamily;
     this.h1FontSize = store.getH1FontSize;
