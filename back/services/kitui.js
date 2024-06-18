@@ -14,16 +14,49 @@ async function create(newKitui) {
       },
       {
         name: 'Lato',
-        import: ""
+        import: "@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');"
       },
       {
-        name: ''
+        name: 'Ubuntu',
+        import: "@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');"
+      },
+      {
+        name: 'Rubik',
+        import: "@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');"
+      },
+      {
+        name: 'Playfair Display',
+        import: "@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');"
+      },
+      {
+        name: 'Quicksand',
+        import: "@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');"
+      },
+      {
+        name: 'Nunito',
+        import: "@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');"
+      },
+      {
+        name: 'Montserrat',
+        import: "@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');"
+      },
+      {
+        name: 'Raleway',
+        import: "@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');"
+      },
+      {
+        name: 'Fira code',
+        import: "@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&display=swap');"
       }
-
     ]
 
+    const fontTitleImport = fonts.find(font => font.name === newKitui.typography.fontFamily.title).import;
+    const fontTextImport = fonts.find(font => font.name === newKitui.typography.fontFamily.text).import;
+
+    imports = fontTextImport === fontTitleImport ? fontTextImport : fontTextImport + fontTitleImport;
 
     const styleRoot = `
+    ${imports}
     :root {
       --layout-max-width : ${newKitui.layout.maxWidth}px;
       --layout-padding-x : ${newKitui.layout.padding.x}px;
