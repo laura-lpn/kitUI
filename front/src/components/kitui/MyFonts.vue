@@ -64,16 +64,17 @@ export default {
   data() {
     return {
       fonts: [
-        { name: 'Arial', value: 'Arial' },
         { name: 'Roboto', value: 'Roboto' },
-        { name: 'Helvetica', value: 'Helvetica' },
+        { name: 'Poppins', value: 'Poppins' },
         { name: 'Lato', value: 'Lato' },
-        { name: 'Trebuchet MS', value: 'Trebuchet MS' },
-        { name: 'Times New Roman', value: 'Times New Roman' },
-        { name: 'Georgia', value: 'Georgia' },
-        { name: 'Garamond', value: 'Garamond' },
-        { name: 'Courier New', value: 'Courier New' },
-        { name: 'Brush Script MT', value: 'Brush Script MT' },
+        { name: 'Ubuntu', value: 'Ubuntu' },
+        { name: 'Rubik', value: 'Rubik' },
+        { name: 'Playfair Display', value: 'Playfair Display' },
+        { name: 'Quicksand', value: 'Quicksand' },
+        { name: 'Nunito', value: 'Nunito' },
+        { name: 'Montserrat', value: 'Montserrat' },
+        { name: 'Raleway', value: 'Raleway' },
+        { name: 'Fira Code', value: 'Fira Code' },
       ],
       FontWeights: [
         { name: '100', value: '100' },

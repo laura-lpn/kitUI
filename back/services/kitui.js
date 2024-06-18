@@ -45,7 +45,7 @@ async function create(newKitui) {
         import: "@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');"
       },
       {
-        name: 'Fira code',
+        name: 'Fira Code',
         import: "@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&display=swap');"
       }
     ]
