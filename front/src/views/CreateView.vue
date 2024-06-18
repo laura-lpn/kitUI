@@ -37,7 +37,6 @@ export default {
   methods: {
     nextStep() {
       if (this.currentStep < 5) {
-        console.log(this.currentStep)
         this.currentStep++;
       }
     },

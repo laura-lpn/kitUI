@@ -41,7 +41,7 @@
 import { useColorsStore } from '@/stores/colors';
 
 export default {
-  name: 'Layout',
+  name: 'MyColors',
   data() {
     return {
       colorLightBase: '#000000' as String,
@@ -54,7 +54,7 @@ export default {
     };
   },
   emits:['next', 'previous'],
-  mounted(){
+  created() {
     const store = useColorsStore();
     this.colorLightBase = store.getColorLightBase
     this.colorDarkBase = store.getColorDarkBase
@@ -67,6 +67,7 @@ export default {
   methods: {
     setColorLightBase(value: String) {
       this.colorLightBase = value;
+      console.log('getDarkerShade', this.getDarkerShade(value));
       this.colorLightDarker = this.getDarkerShade(value);
       this.colorLightLighter = this.getLighterShade(value);
     },

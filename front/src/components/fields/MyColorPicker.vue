@@ -23,7 +23,7 @@ export default {
     },
     methods: {
         updateValue(event) {
-            console.log(event.target.value);
+            this.$emit('colorValue', event.target.value);
         }
     }
 }

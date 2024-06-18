@@ -5,8 +5,8 @@
       <section>
         <h2>Titres</h2>
         <div> 
-          <my-select @selectValue="setTitleFontFamily" :label="'Police'" :name="'titleFontFamily'" :options="fonts"></my-select>
-          {{ titleFontFamily }}
+          <my-select @selectValue="setTitleFontFamily" :label="'Police'" :name="'titleFontFamily'" :options="fonts" :value="titleFontFamily"></my-select>
+           {{ titleFontFamily }}
           <h4>Titre 1</h4>
           <div>
             <my-input @inputValue="setH1FontSize" :label="'Taille'" :name="'h1FontSize'" :value="h1FontSize"></my-input>
