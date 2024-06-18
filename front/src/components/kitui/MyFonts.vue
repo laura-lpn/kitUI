@@ -1,58 +1,61 @@
 <template>
-  <div>
-    <h1>Typographies</h1>
-    <div>
-      <section>
-        <h2>Titres</h2>
-        <div> 
-          <my-select @selectValue="setTitleFontFamily" :label="'Police'" :name="'titleFontFamily'" :options="fonts" :value="titleFontFamily"></my-select>
-           {{ titleFontFamily }}
-          <h4>Titre 1</h4>
-          <div>
-            <my-input @inputValue="setH1FontSize" :label="'Taille'" :name="'h1FontSize'" :value="h1FontSize"></my-input>
-            <my-select @selectValue="setH1FontWeight" :label="'Graisse'" :name="'h1FontWeight'" :options="FontWeights" :value="h1FontWeight"></my-select>
+  <div class="flex flex-col justify-center items-center px-8">
+    <h1 class="text-3xl text-pink font-semibold mb-8">Typographies</h1>
+    <section class="flex">
+      <div>
+        <section>
+          <h2>Titres</h2>
+          <div> 
+            <my-select @selectValue="setTitleFontFamily" :label="'Police'" :name="'titleFontFamily'" :options="fonts" :value="titleFontFamily"></my-select>
+            {{ titleFontFamily }}
+            <h4>Titre 1</h4>
+            <div>
+              <my-input @inputValue="setH1FontSize" :label="'Taille'" :name="'h1FontSize'" :value="h1FontSize"></my-input>
+              <my-select @selectValue="setH1FontWeight" :label="'Graisse'" :name="'h1FontWeight'" :options="FontWeights" :value="h1FontWeight"></my-select>
+            </div>
+            <h4>Titre 2</h4>
+            <div>
+              <my-input @inputValue="setH2FontSize" :label="'Taille'" :name="'h2FontSize'" :value="h2FontSize"></my-input>
+              <my-select @selectValue="setH2FontWeight" :label="'Graisse'" :name="'h2FontWeight'" :options="FontWeights" :value="h2FontWeight"></my-select>
+            </div>
+            <h4>Titre 3</h4>
+            <div>
+              <my-input @inputValue="setH3FontSize" :label="'Taille'" :name="'h3FontSize'" :value="h3FontSize"></my-input>
+              <my-select @selectValue="setH3FontWeight" :label="'Graisse'" :name="'h3FontWeight'" :options="FontWeights" :value="h3FontWeight"></my-select>
+            </div>
+            <h4>Titre 4</h4>
+            <div>
+              <my-input @inputValue="setH4FontSize" :label="'Taille'" :name="'h4FontSize'" :value="h4FontSize"></my-input>
+              <my-select @selectValue="setH4FontWeight" :label="'Graisse'" :name="'h4FontWeight'" :options="FontWeights" :value="h4FontWeight"></my-select>
+            </div>
+            <h4>Titre 5</h4>
+            <div>
+              <my-input @inputValue="setH5FontSize" :label="'Taille'" :name="'h5FontSize'" :value="h5FontSize"></my-input>
+              <my-select @selectValue="setH5FontWeight" :label="'Graisse'" :name="'h5FontWeight'" :options="FontWeights" :value="h5FontWeight"></my-select>
+            </div>
+            <h4>Titre 6</h4>
+            <div>
+              <my-input @inputValue="setH6FontSize" :label="'Taille'" :name="'h6FontSize'" :value="h6FontSize"></my-input>
+              <my-select @selectValue="setH6FontWeight" :label="'Graisse'" :name="'h6FontWeight'" :options="FontWeights" :value="h6FontWeight"></my-select>
+            </div>
           </div>
-          <h4>Titre 2</h4>
+        </section>
+        <section>
+          <h2>Textes</h2>
           <div>
-            <my-input @inputValue="setH2FontSize" :label="'Taille'" :name="'h2FontSize'" :value="h2FontSize"></my-input>
-            <my-select @selectValue="setH2FontWeight" :label="'Graisse'" :name="'h2FontWeight'" :options="FontWeights" :value="h2FontWeight"></my-select>
+            <my-select @selectValue="setTextFontFamily" :label="'Police'" :name="'textFontFamily'" :options="fonts" :value="textFontFamily"></my-select>
+            <my-input @inputValue="setTextFontSize" :label="'Taille'" :name="'textFontSize'" :value="textFontSize"></my-input>
           </div>
-          <h4>Titre 3</h4>
-          <div>
-            <my-input @inputValue="setH3FontSize" :label="'Taille'" :name="'h3FontSize'" :value="h3FontSize"></my-input>
-            <my-select @selectValue="setH3FontWeight" :label="'Graisse'" :name="'h3FontWeight'" :options="FontWeights" :value="h3FontWeight"></my-select>
-          </div>
-          <h4>Titre 4</h4>
-          <div>
-            <my-input @inputValue="setH4FontSize" :label="'Taille'" :name="'h4FontSize'" :value="h4FontSize"></my-input>
-            <my-select @selectValue="setH4FontWeight" :label="'Graisse'" :name="'h4FontWeight'" :options="FontWeights" :value="h4FontWeight"></my-select>
-          </div>
-          <h4>Titre 5</h4>
-          <div>
-            <my-input @inputValue="setH5FontSize" :label="'Taille'" :name="'h5FontSize'" :value="h5FontSize"></my-input>
-            <my-select @selectValue="setH5FontWeight" :label="'Graisse'" :name="'h5FontWeight'" :options="FontWeights" :value="h5FontWeight"></my-select>
-          </div>
-          <h4>Titre 6</h4>
-          <div>
-            <my-input @inputValue="setH6FontSize" :label="'Taille'" :name="'h6FontSize'" :value="h6FontSize"></my-input>
-            <my-select @selectValue="setH6FontWeight" :label="'Graisse'" :name="'h6FontWeight'" :options="FontWeights" :value="h6FontWeight"></my-select>
-          </div>
-        </div>
-      </section>
-      <section>
-        <h2>Textes</h2>
-        <div>
-          <my-select @selectValue="setTextFontFamily" :label="'Police'" :name="'textFontFamily'" :options="fonts" :value="textFontFamily"></my-select>
-          <my-input @inputValue="setTextFontSize" :label="'Taille'" :name="'textFontSize'" :value="textFontSize"></my-input>
-        </div>
-      </section>
+        </section>
+      </div>
+      <div>
+        <h1>Rendu</h1>
+      </div>
+    </section>
+    <section>
       <my-button :id="'previousButton'" :value="'Précédent'" @click="previousStep"></my-button>
       <my-button :id="'nextButton'" :value="'Suivant'" @click="nextStep"></my-button>
-
-    </div>
-    <div>
-        <h1>Rendu</h1>
-    </div>
+    </section>
   </div>
 </template>
 
@@ -87,7 +90,7 @@ export default {
         { name: '800', value: '800' },
         { name: '900', value: '900' },
       ],
-      titleFontFamily: 'Arial' as String,
+      titleFontFamily: 'Quicksand' as String,
       h1FontSize: 16 as Number,
       h1FontWeight: 400 as Number,
       h2FontSize: 14 as Number,
@@ -100,7 +103,7 @@ export default {
       h5FontWeight: 400 as Number,
       h6FontSize: 6 as Number,
       h6FontWeight: 400 as Number,
-      textFontFamily: 'Arial' as String,
+      textFontFamily: 'Quicksand' as String,
       textFontSize: 12 as Number,
     };
   },

@@ -1,49 +1,53 @@
 <template>
-  <div>
-    <h1>Tuiles</h1>
-    <div>
-      <section>
-        <h2>Conteneur</h2>
-        <div>
-          <h3>Padding</h3>
-          <my-range
-            @rangeValue="setCardPaddingX"
-            :label="'Horizontal'"
-            :name="'cardPaddingX'"
-            :min="0"
-            :max="100"
-            :step="10"
-            :suffix="'px'"
-            :value="cardPaddingX"
-          ></my-range>
-          <my-range
-            @rangeValue="setCardPaddingY"
-            :label="'Vertical'"
-            :name="'cardPaddingY'"
-            :min="0"
-            :max="100"
-            :step="10"
-            :suffix="'px'"
-            :value="cardPaddingY"
-          ></my-range>
-          <my-range
-            @rangeValue="setCardBorderRadius"
-            :label="'Arrondis'"
-            :name="'cardBorderRadius'"
-            :min="0"
-            :max="50"
-            :step="5"
-            :suffix="'px'"
-            :value="cardBorderRadius"
-          ></my-range>
-        </div>
-      </section>
+  <div class="flex flex-col justify-center items-center px-8">
+    <h1 class="text-3xl text-pink font-semibold mb-8">Tuiles</h1>
+    <section class="flex">
+      <div>
+        <section>
+          <h2>Conteneur</h2>
+          <div>
+            <h3>Padding</h3>
+            <my-range
+              @rangeValue="setCardPaddingX"
+              :label="'Horizontal'"
+              :name="'cardPaddingX'"
+              :min="0"
+              :max="100"
+              :step="10"
+              :suffix="'px'"
+              :value="cardPaddingX"
+            ></my-range>
+            <my-range
+              @rangeValue="setCardPaddingY"
+              :label="'Vertical'"
+              :name="'cardPaddingY'"
+              :min="0"
+              :max="100"
+              :step="10"
+              :suffix="'px'"
+              :value="cardPaddingY"
+            ></my-range>
+            <my-range
+              @rangeValue="setCardBorderRadius"
+              :label="'Arrondis'"
+              :name="'cardBorderRadius'"
+              :min="0"
+              :max="50"
+              :step="5"
+              :suffix="'px'"
+              :value="cardBorderRadius"
+            ></my-range>
+          </div>
+        </section>
+      </div>
+      <div>
+        <h1>Rendu</h1>
+      </div>
+    </section>
+    <section>
       <my-button :id="'previousButton'" :value="'Précédent'" @click="previousStep"></my-button>
       <my-button :id="'download'" :value="'Terminer'" @click="finishStep"></my-button>
-    </div>
-    <div>
-      <h1>Rendu</h1>
-    </div>
+    </section>
   </div>
 </template>
 

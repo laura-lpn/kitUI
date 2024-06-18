@@ -1,6 +1,6 @@
 <template>
   <div class="flex flex-col justify-center items-center px-8">
-    <h1>Layout</h1>
+    <h1 class="text-3xl text-pink font-semibold mb-8">Layout</h1>
     <section class="flex">
       <div>
         <section>
@@ -91,7 +91,9 @@
         <h1>Rendu</h1>
       </div>
     </section>
-    <my-button :id="'nextButton'" :value="'Suivant'" @click="nextStep"></my-button>
+    <section>
+      <my-button :id="'nextButton'" :value="'Suivant'" @click="nextStep"></my-button>
+    </section>
   </div>
 </template>
 

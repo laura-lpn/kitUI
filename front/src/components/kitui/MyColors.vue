@@ -1,39 +1,43 @@
 <template>
-  <div>
-    <h1>Couleurs</h1>
-    <div>
-      <section>
-        <h2>Couleur sombre</h2>
-        <div>
-          <my-color-picker @colorValue="setColorDarkBase" :label="'Base'" :name="'colorDarkBase'" :value="colorDarkBase"></my-color-picker>
-          <div :style="`background-color: ${colorDarkDarker}; width: 24px; height: 24px;`">
+  <div class="flex flex-col justify-center items-center px-8">
+    <h1 class="text-3xl text-pink font-semibold mb-8">Couleurs</h1>
+    <section class="flex">
+      <div>
+        <section>
+          <h2>Couleur sombre</h2>
+          <div>
+            <my-color-picker @colorValue="setColorDarkBase" :label="'Base'" :name="'colorDarkBase'" :value="colorDarkBase"></my-color-picker>
+            <div :style="`background-color: ${colorDarkDarker}; width: 24px; height: 24px;`">
+            </div>
+            <div :style="`background-color: ${colorDarkLighter}; width: 24px; height: 24px;`">
+            </div>
           </div>
-          <div :style="`background-color: ${colorDarkLighter}; width: 24px; height: 24px;`">
+        </section>
+        <section>
+          <h2>Couleur claire</h2>
+          <div>
+            <my-color-picker @colorValue="setColorLightBase" :label="'Base'" :name="'colorLightBase'" :value="colorLightBase"></my-color-picker>
+            <div :style="`background-color: ${colorLightDarker}; width: 24px; height: 24px;`">
+            </div>
+            <div :style="`background-color: ${colorLightLighter}; width: 24px; height: 24px;`">
+            </div>
           </div>
-        </div>
-      </section>
-      <section>
-        <h2>Couleur claire</h2>
-        <div>
-          <my-color-picker @colorValue="setColorLightBase" :label="'Base'" :name="'colorLightBase'" :value="colorLightBase"></my-color-picker>
-          <div :style="`background-color: ${colorLightDarker}; width: 24px; height: 24px;`">
+        </section>
+        <section>
+          <h2>Couleur d'accent</h2>
+          <div>
+            <my-color-picker @colorValue="setAccentColor" :name="'accentColor'" :value="accentColor"></my-color-picker>
           </div>
-          <div :style="`background-color: ${colorLightLighter}; width: 24px; height: 24px;`">
-          </div>
-        </div>
-      </section>
-      <section>
-        <h2>Couleur d'accent</h2>
-        <div>
-          <my-color-picker @colorValue="setAccentColor" :name="'accentColor'" :value="accentColor"></my-color-picker>
-        </div>
-      </section>
+        </section>
+      </div>
+      <div>
+        <h1>Rendu</h1>
+      </div>
+    </section>
+    <section>
       <my-button :id="'previousButton'" :value="'Précédent'" @click="previousStep"></my-button>
       <my-button :id="'nextButton'" :value="'Suivant'" @click="nextStep"></my-button>
-    </div>
-    <div>
-      <h1>Rendu</h1>
-    </div>
+    </section>
   </div>
 </template>
 
