@@ -53,7 +53,7 @@ async function create(newKitui) {
     const fontTitleImport = fonts.find(font => font.name === newKitui.typography.fontFamily.title).import;
     const fontTextImport = fonts.find(font => font.name === newKitui.typography.fontFamily.text).import;
 
-    imports = fontTextImport === fontTitleImport ? fontTextImport : fontTextImport + fontTitleImport;
+    imports = fontTextImport === fontTitleImport ? fontTextImport : fontTextImport + '\n' + fontTitleImport + '\n';
 
     const styleRoot = `
     ${imports}
