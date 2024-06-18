@@ -5,7 +5,7 @@ async function create(req, res) {
   console.log(req.body);
   console.log(kitui);
   if (kitui)
-    res.status(201).json({ message: "Kitui créé" });
+    res.status(201).json({ message: "Kitui créé", path: kitui });
   else
     res.status(400).json({ message: "Erreur lors de l'insertion" });
 }
