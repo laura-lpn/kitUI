@@ -1,21 +1,19 @@
 <template>
-  <div>
-    <div class="progress-bar">
-      <div :class="{ active: currentStep === 1 }">1</div>
-      <div :class="{ active: currentStep === 2 }">2</div>
-      <div :class="{ active: currentStep === 3 }">3</div>
-      <div :class="{ active: currentStep === 4 }">4</div>
-      <div :class="{ active: currentStep === 5 }">5</div>
+  <div class="bg-white rounded-[32px] mt-12 w-3/4 mx-auto py-8 px-20">
+    <div>
+      <div class="flex justify-between w-3/4 mx-auto">
+        <div :class="{ active: currentStep === 1 }">1</div>
+        <div :class="{ active: currentStep === 2 }">2</div>
+        <div :class="{ active: currentStep === 3 }">3</div>
+        <div :class="{ active: currentStep === 4 }">4</div>
+        <div :class="{ active: currentStep === 5 }">5</div>
+      </div>
+      <my-layout v-if="currentStep === 1" @next="nextStep"></my-layout>
+      <my-colors v-if="currentStep === 2" @previous="previousStep" @next="nextStep"></my-colors>
+      <my-fonts v-if="currentStep === 3" @previous="previousStep" @next="nextStep"></my-fonts>
+      <my-components v-if="currentStep === 4" @previous="previousStep" @next="nextStep"></my-components>
+      <my-cards v-if="currentStep === 5" @previous="previousStep" @finish="sendKit"></my-cards>
     </div>
-    <my-layout v-if="currentStep === 1" @next="nextStep"></my-layout>
-    <my-colors v-if="currentStep === 2" @previous="previousStep" @next="nextStep"></my-colors>
-    <my-fonts v-if="currentStep === 3" @previous="previousStep" @next="nextStep"></my-fonts>
-    <my-components
-      v-if="currentStep === 4"
-      @previous="previousStep"
-      @next="nextStep"
-    ></my-components>
-    <my-cards v-if="currentStep === 5" @previous="previousStep" @finish="sendKit"></my-cards>
   </div>
 </template>
 <script>
@@ -152,10 +150,8 @@ export default {
           })
         })
         if(response.ok) {
-          console.log('Kit UI envoyé')
-          router.push({ name: 'Preview' })
+          router.push({ name: 'preview' })
         }
-
 
       } catch (error) {
         console.error(error);
@@ -164,3 +160,9 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+.active {
+  color: #EA607C;
+}
+</style>

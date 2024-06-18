@@ -4,7 +4,7 @@
             <label :for="name">{{ label }}</label>
             <span>{{ value }} {{ suffix }}</span>
         </div>
-        <input type="range" :min="min" :max="max" :step="step" :value="value" @input="updateValue">
+        <input :id="name" type="range" :min="min" :max="max" :step="step" :value="value" @input="updateValue">
     </div>
 </template>
 <script>

@@ -1,4 +1,3 @@
-
 import { createApp } from 'vue'
 import { createPinia } from 'pinia'
 
@@ -12,16 +11,16 @@ import MySelect from './components/fields/MySelect.vue'
 import MyRange from './components/fields/MyRange.vue'
 import MyColorPicker from './components/fields/MyColorPicker.vue'
 
-const app = createApp(App)
-
 const store = createPinia()
+
+const app = createApp(App)
+  .component('my-input', MyInput)
+  .component('my-button', MyButton)
+  .component('my-select', MySelect)
+  .component('my-range', MyRange)
+  .component('my-color-picker', MyColorPicker)
 
 app.use(store)
 app.use(router)
-app.component('my-input', MyInput)
-app.component('my-button', MyButton)
-app.component('my-select', MySelect)
-app.component('my-range', MyRange)
-app.component('my-color-picker', MyColorPicker)
 
 app.mount('#app')
