@@ -101,7 +101,7 @@
 import { useLayoutStore } from '@/stores/layout'
 
 export default {
-  name: 'Layout',
+  name: 'MyLayout',
   data() {
     return {
       layoutMaxWidth: 800 as Number,

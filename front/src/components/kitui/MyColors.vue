@@ -94,7 +94,7 @@ export default {
       store.setColorLightDarker(this.colorLightDarker);
       store.setColorLightLighter(this.colorLightLighter);
     },
-    getDarkerShade(hexColor: string): string {
+    getDarkerShade(hexColor: String): String {
       // Convert hex color to RGB
       let r = parseInt(hexColor.slice(1, 3), 16);
       let g = parseInt(hexColor.slice(3, 5), 16);
@@ -113,7 +113,7 @@ export default {
       return "#" + rHex + gHex + bHex;
     },
 
-    getLighterShade(hexColor: string): string {
+    getLighterShade(hexColor: String): String {
       // Convert hex color to RGB
       let r = parseInt(hexColor.slice(1, 3), 16);
       let g = parseInt(hexColor.slice(3, 5), 16);

@@ -111,7 +111,7 @@
 import { useComponentsStore } from '@/stores/components'
 
 export default {
-  name: 'Components',
+  name: 'MyComponents',
   data() {
     return {
       buttonPaddingX: 0 as Number,

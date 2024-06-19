@@ -1,6 +1,6 @@
 <template>
   <div class="bg-white rounded-[32px] my-12 w-4/5 sm:w-3/4 mx-auto py-8 px-6 sm:px-16 md:px-20 flex flex-col justify-center items-center">
-    <div class="flex justify-center w-full lg:w-3/4 lg:px-12 md:mx-auto mb-6 gap-4 sm:gap-6 md:gap-8">
+    <section class="flex justify-center w-full lg:w-3/4 lg:px-12 md:mx-auto mb-6 gap-4 sm:gap-6 md:gap-8">
       <div :class="{ active: currentStep === 1 }" class="flex flex-col items-center gap-2 w-fit">
         <span class="text-pink md:text-2xl shadow-extern rounded-[50px] aspect-square h-10 w-10 md:h-16 md:w-16 flex justify-center items-center">
           <p class="text-pink text-lg md:text-2xl rounded-[50px] aspect-square h-8 w-8 md:h-14 md:w-14 flex justify-center items-center">1</p>
@@ -31,7 +31,7 @@
         </span>
         <span class="hidden md:flex font-medium text-sm">Tuiles</span>
       </div>
-    </div>
+    </section>
     <my-layout v-if="currentStep === 1" @next="nextStep"></my-layout>
     <my-colors v-if="currentStep === 2" @previous="previousStep" @next="nextStep"></my-colors>
     <my-fonts v-if="currentStep === 3" @previous="previousStep" @next="nextStep"></my-fonts>
