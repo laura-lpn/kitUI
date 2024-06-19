@@ -30,7 +30,7 @@
           </div>
         </section>
       </div>
-      <div>
+      <div class="hidden md:flex">
         <h1>Rendu</h1>
         <div :style="`background-color: ${ButtonColorText}; width: 24px; height: 24px; border: 1px solid black`"></div>
       </div>

@@ -1,8 +1,10 @@
 <template>
-    <div>
-        <label :for="name">{{ label }}</label>
-        <input type="number" :name="name" :id="name" @input="updateValue" :value="value">
-        <span>{{ suffix }}</span>
+    <div class="flex flex-col justify-start gap-2">
+        <label :for="name" class="font-medium font-sm">{{ label }}</label>
+        <div class="rounded-input shadow-extern p-1 relative flex items-center">
+            <input type="number" :name="name" :id="name" @input="updateValue" :value="value" class="w-full bg-white outline-none shadow-intern rounded-input px-2 py-1">
+            <span class="absolute right-8">{{ suffix }}</span>
+        </div>
     </div>
 </template>
 

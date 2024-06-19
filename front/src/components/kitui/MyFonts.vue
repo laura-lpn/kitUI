@@ -48,7 +48,7 @@
           </div>
         </section>
       </div>
-      <div>
+      <div class="hidden md:flex">
         <h1>Rendu</h1>
       </div>
     </section>
