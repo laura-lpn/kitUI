@@ -63,7 +63,7 @@
 import { useFontsStore } from '@/stores/fonts';
 
 export default {
-  name: 'MyFont',
+  name: 'MyFonts',
   data() {
     return {
       fonts: [
