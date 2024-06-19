@@ -32,6 +32,7 @@
       </div>
       <div>
         <h1>Rendu</h1>
+        <div :style="`background-color: ${ButtonColorText}; width: 24px; height: 24px; border: 1px solid black`"></div>
       </div>
     </section>
     <section>
@@ -43,6 +44,7 @@
 
 <script lang="ts">
 import { useColorsStore } from '@/stores/colors';
+import { useComponentsStore } from '@/stores/components';
 
 export default {
   name: 'MyColors',
@@ -55,6 +57,7 @@ export default {
       colorLightDarker: '' as String,
       colorDarkDarker: '' as String,
       colorDarkLighter: '' as String,
+      ButtonColorText: '' as String,
     };
   },
   emits:['next', 'previous'],
@@ -67,21 +70,24 @@ export default {
     this.colorDarkLighter = store.getColorDarkLighter
     this.colorLightDarker = store.getColorLightDarker
     this.colorLightLighter = store.getColorLightLighter
+    this.ButtonColorText = useComponentsStore().getButtonColorText;
   },
   methods: {
     setColorLightBase(value: String) {
       this.colorLightBase = value;
-      console.log('getDarkerShade', this.getDarkerShade(value));
       this.colorLightDarker = this.getDarkerShade(value);
       this.colorLightLighter = this.getLighterShade(value);
+      this.getContrastColor(this.accentColor);
     },
     setColorDarkBase(value: String) {
       this.colorDarkBase = value;
       this.colorDarkDarker = this.getDarkerShade(value);
       this.colorDarkLighter = this.getLighterShade(value);
+      this.getContrastColor(this.accentColor);
     },
     setAccentColor(value: String) {
       this.accentColor = value;
+      this.getContrastColor(value);
     },
 
     updateStore() {
@@ -130,6 +136,77 @@ export default {
       let gHex = g.toString(16).padStart(2, '0');
       let bHex = b.toString(16).padStart(2, '0');
       return "#" + rHex + gHex + bHex;
+    },
+    hexToRgb(hex: String) {
+	    // Extraction des composantes de couleur R, G et B
+      hex = hex.substring(1);
+      const r = parseInt(hex.substring(0, 2), 16);
+      const g = parseInt(hex.substring(2, 4), 16);
+      const b = parseInt(hex.substring(4, 6), 16);
+      
+      return { r, g, b };
+    },
+    getRelativeLuminance(r : number, g : number, b : number) {
+      // Conversion des couleurs en sRGB
+      const sr = r / 255;
+      const sg = g / 255;
+      const sb = b / 255;
+      
+      // Correction gamma inverse
+      const rLinear = (sr <= 0.03928) ? sr / 12.92 : Math.pow((sr + 0.055) / 1.055, 2.4);
+      const gLinear = (sg <= 0.03928) ? sg / 12.92 : Math.pow((sg + 0.055) / 1.055, 2.4);
+      const bLinear = (sb <= 0.03928) ? sb / 12.92 : Math.pow((sb + 0.055) / 1.055, 2.4);
+      
+      // Calcul de la luminance relative
+      return 0.2126 * rLinear + 0.7152 * gLinear + 0.0722 * bLinear;
+    },
+    getContrastRatio(color1: String, color2: String) : number {
+      // Conversion des couleurs en RGB
+      const rgb1 = this.hexToRgb(color1);
+      const rgb2 = this.hexToRgb(color2);
+      
+      // Calcul de la luminance relative des couleurs
+      const l1 = this.getRelativeLuminance(rgb1.r, rgb1.g, rgb1.b);
+      const l2 = this.getRelativeLuminance(rgb2.r, rgb2.g, rgb2.b);
+      
+      // Calcul du contraste selon la formule WCAG 2.0
+      const contrast = (Math.max(l1, l2) + 0.05) / (Math.min(l1, l2) + 0.05);
+      return contrast;
+    },
+    getContrastColor(accentColor: String) {
+      const contrast1 = this.getContrastRatio(this.colorLightBase, accentColor);
+      const contrast2 = this.getContrastRatio(this.colorLightLighter, accentColor);
+      const contrast3 = this.getContrastRatio(this.colorLightDarker, accentColor);
+      const contrast4 = this.getContrastRatio(this.colorDarkBase, accentColor);
+      const contrast5 = this.getContrastRatio(this.colorDarkLighter, accentColor);
+      const contrast6 = this.getContrastRatio(this.colorDarkDarker, accentColor);
+
+      const contrast = Math.max(contrast1, contrast2, contrast3, contrast4, contrast5, contrast6);
+
+      let colorContrastButton = '' as String;
+      switch (contrast) {
+        case contrast1:
+          colorContrastButton = this.colorLightBase;
+          break;
+        case contrast2:
+          colorContrastButton = this.colorLightLighter;
+          break;
+        case contrast3:
+          colorContrastButton = this.colorLightDarker;
+          break;
+        case contrast4:
+          colorContrastButton = this.colorDarkBase;
+          break;
+        case contrast5:
+          colorContrastButton = this.colorDarkLighter;
+          break;
+        case contrast6:
+          colorContrastButton = this.colorDarkDarker;
+          break;
+      }
+
+      useComponentsStore().setButtonColorText(colorContrastButton);
+      this.ButtonColorText = colorContrastButton;
     },
     nextStep() {
       this.updateStore();
