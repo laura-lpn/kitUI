@@ -107,7 +107,7 @@ export default {
       textFontSize: 12 as Number,
     };
   },
-  mounted() {
+  created() {
     const store = useFontsStore();
     this.titleFontFamily = store.getTitleFontFamily;
     this.h1FontSize = store.getH1FontSize;

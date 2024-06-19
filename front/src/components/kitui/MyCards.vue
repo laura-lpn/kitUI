@@ -64,7 +64,7 @@ export default {
     }
   },
   emits: ['previous', 'finish'],
-  mounted() {
+  created() {
     const store = useCardsStore()
     this.cardPaddingX = store.getCardPaddingX
     this.cardPaddingY = store.getCardPaddingY

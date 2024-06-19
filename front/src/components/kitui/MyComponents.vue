@@ -125,7 +125,7 @@ export default {
     }
   },
   emits: ['next', 'previous'],
-  mounted() {
+  created() {
     const store = useComponentsStore()
     this.buttonPaddingX = store.getButtonPaddingX
     this.buttonPaddingY = store.getButtonPaddingY

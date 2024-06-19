@@ -114,7 +114,7 @@ export default {
       layoutGutter: 0 as Number
     }
   },
-  mounted() {
+  created() {
     const store = useLayoutStore()
     this.layoutMaxWidth = store.getLayoutMaxWidth
     this.layoutPaddingX = store.getLayoutPaddingX
