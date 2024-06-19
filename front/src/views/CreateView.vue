@@ -173,7 +173,7 @@ export default {
           })
         })
         if(response.ok) {
-          router.push({ name: 'preview' })
+          router.push({ name: 'download' })
         }
 
       } catch (error) {

@@ -1,7 +1,7 @@
 <template>
     <div class="flex flex-col justify-start gap-2">
-        <label :for="name" class="font-medium font-sm">{{ label }}</label>
-        <div class="rounded-input shadow-extern p-1 relative flex items-center h-12 w-12">
+        <label :for="name" class="font-medium">{{ label }}</label>
+        <div class="rounded-input shadow-extern p-1 flex items-center h-12 w-12">
             <input type="color" :name="name" :id="name" @input="updateValue" :value="value" class="bg-white w-full h-full">
         </div>
     </div>

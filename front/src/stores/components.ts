@@ -2,14 +2,14 @@ import { defineStore } from 'pinia';
 
 export const useComponentsStore = defineStore('components', {
     state: () => ({
-        buttonPaddingX: 16 as Number,
+        buttonPaddingX: 20 as Number,
         buttonPaddingY: 8 as Number,
         buttonBorderRadius: 32 as Number,
         buttonFontSize: 16 as Number,
         buttonColorText: '#D72045' as String,
-        inputPaddingX: 4 as Number,
-        inputPaddingY: 2 as Number,
-        inputBorderRadius: 16 as Number,
+        inputPaddingX: 12 as Number,
+        inputPaddingY: 8 as Number,
+        inputBorderRadius: 8 as Number,
         inputFontSize: 14 as Number,
     }),
     getters: {

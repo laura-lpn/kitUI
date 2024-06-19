@@ -1,41 +1,81 @@
 <template>
-  <div class="flex flex-col justify-center items-center px-8">
+  <div class="flex flex-col justify-center items-center w-full xl:px-16">
     <h1 class="text-3xl text-pink font-semibold mb-8">Couleurs</h1>
-    <section class="flex">
-      <div>
+    <section class="flex w-full gap-8 lg:gap-16 px-8 md:px-0">
+      <div class="flex flex-col w-full gap-12 md:w-2/5">
         <section>
-          <h2>Couleur sombre</h2>
-          <div>
+          <h2 class="text-pink text-xl text-medium mb-4">Couleur sombre</h2>
+          <div class="flex justify-between items-end">
             <my-color-picker @colorValue="setColorDarkBase" :label="'Base'" :name="'colorDarkBase'" :value="colorDarkBase"></my-color-picker>
-            <div :style="`background-color: ${colorDarkDarker}; width: 24px; height: 24px;`">
-            </div>
-            <div :style="`background-color: ${colorDarkLighter}; width: 24px; height: 24px;`">
+            <div class="flex gap-4">
+              <div class="flex flex-col gap-2 items-center">
+                <span class="text-sm">Claire</span>
+                <div class="rounded-input shadow-extern p-1 flex items-center h-12 w-12">
+                  <div class="h-full w-full rounded-input" :style="`background-color: ${colorDarkLighter};`"></div>
+                </div>
+              </div>
+              <div class="flex flex-col gap-2 items-center">
+                <span>Sombre</span>
+                <div class="rounded-input shadow-extern p-1 flex items-center h-12 w-12">
+                  <div class="h-full w-full rounded-input" :style="`background-color: ${colorDarkDarker};`"></div>
+                </div>
+              </div>
             </div>
           </div>
         </section>
         <section>
-          <h2>Couleur claire</h2>
-          <div>
-            <my-color-picker @colorValue="setColorLightBase" :label="'Base'" :name="'colorLightBase'" :value="colorLightBase"></my-color-picker>
-            <div :style="`background-color: ${colorLightDarker}; width: 24px; height: 24px;`">
-            </div>
-            <div :style="`background-color: ${colorLightLighter}; width: 24px; height: 24px;`">
+          <h2 class="text-pink text-xl text-medium mb-4">Couleur claire</h2>
+          <div class="flex justify-between items-end">
+            <my-color-picker @colorValue="setColorLightBase" :label="'Base'" :name="'colorDarkBase'" :value="colorLightBase"></my-color-picker>
+            <div class="flex gap-4">
+              <div class="flex flex-col gap-2 items-center">
+                <span class="text-sm">Claire</span>
+                <div class="rounded-input shadow-extern p-1 flex items-center h-12 w-12">
+                  <div class="h-full w-full rounded-input" :style="`background-color: ${colorLightLighter};`"></div>
+                </div>
+              </div>
+              <div class="flex flex-col gap-2 items-center">
+                <span>Sombre</span>
+                <div class="rounded-input shadow-extern p-1 flex items-center h-12 w-12">
+                  <div class="h-full w-full rounded-input" :style="`background-color: ${colorLightDarker};`"></div>
+                </div>
+              </div>
             </div>
           </div>
         </section>
         <section>
-          <h2>Couleur d'accent</h2>
+          <h2 class="text-pink text-xl text-medium mb-4">Couleur d’accent</h2>
           <div>
             <my-color-picker @colorValue="setAccentColor" :name="'accentColor'" :value="accentColor"></my-color-picker>
           </div>
         </section>
       </div>
-      <div class="hidden md:flex">
-        <h1>Rendu</h1>
-        <div :style="`background-color: ${ButtonColorText}; width: 24px; height: 24px; border: 1px solid black`"></div>
+      <div class="hidden md:flex md:w-3/5 rounded-main shadow-extern p-1">
+        <div class="flex flex-col shadow-intern w-full rounded-main justify-center items-center p-8 gap-8">
+          <div class="flex flex-col gap-2 rounded-main py-4 px-6 w-60" :style="`background: ${colorLightLighter};`">
+            <div class="flex justify-between items-center">
+              <h3 class="text-base" :style="`color: ${colorLightDarker}`">Lorem ipsum</h3>
+              <p class="text-base" :style="`color: ${colorDarkLighter}`">
+                <font-awesome-icon :icon="['fas', 'heart']"/>
+              </p>
+            </div>
+            <p class="text-xs" :style="`color: ${colorDarkBase}`">Lorem ipsum dolor sit amet consectetur. Suspendisse sapien tellus consequat ultricies cras ut imperdiet imperdiet.</p>
+            <button class="text-xs rounded-main py-2 px-6 ml-auto mt-2" :style="`background: ${accentColor}; color: ${ButtonColorText}`">Button</button>
+          </div>
+          <div class="flex flex-col gap-2 rounded-main py-4 px-6 w-60" :style="`background: ${colorDarkDarker};`">
+            <div class="flex justify-between items-center">
+              <h3 class="text-base" :style="`color: ${colorDarkLighter}`">Lorem ipsum</h3>
+              <p class="text-base" :style="`color: ${colorLightLighter}`">
+                <font-awesome-icon :icon="['fas', 'heart']"/>
+              </p>
+            </div>
+            <p class="text-xs" :style="`color: ${colorLightBase}`">Lorem ipsum dolor sit amet consectetur. Suspendisse sapien tellus consequat ultricies cras ut imperdiet imperdiet.</p>
+            <button class="text-xs rounded-main py-2 px-6 ml-auto mt-2" :style="`background: ${accentColor}; color: ${ButtonColorText}`">Button</button>
+          </div>
+        </div>
       </div>
     </section>
-    <section>
+    <section class="flex flex-col justify-center items-center md:flex-row gap-4 mt-12 md:gap-16 lg:gap-32">
       <my-button :id="'previousButton'" :value="'Précédent'" @click="previousStep"></my-button>
       <my-button :id="'nextButton'" :value="'Suivant'" @click="nextStep"></my-button>
     </section>

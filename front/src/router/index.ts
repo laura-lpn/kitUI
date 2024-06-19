@@ -1,7 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import CreateView from '../views/CreateView.vue'
-import PreviewView from '../views/PreviewView.vue'
+import DownloadView from '../views/DownloadView.vue'
 import LegalsView from '../views/LegalsView.vue'
 
 const router = createRouter({
@@ -18,9 +18,9 @@ const router = createRouter({
       component: CreateView
     },
     {
-      path: '/creation/preview',
-      name: 'preview',
-      component: PreviewView
+      path: '/creation/download',
+      name: 'download',
+      component: DownloadView
     },
     {
       path: '/legals',

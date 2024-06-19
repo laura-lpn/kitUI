@@ -1,7 +1,7 @@
 <template>
     <div class="flex flex-col justify-start gap-2">
         <div class="flex justify-between gap-2">
-            <label :for="name" class="font-medium font-sm">{{ label }}</label>
+            <label :for="name" class="font-medium">{{ label }}</label>
             <div class="flex items-center justify-center gap-1">
                 <span class="text-pink">
                     {{ value }}
