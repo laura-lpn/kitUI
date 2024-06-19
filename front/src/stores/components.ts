@@ -2,15 +2,15 @@ import { defineStore } from 'pinia';
 
 export const useComponentsStore = defineStore('components', {
     state: () => ({
-        buttonPaddingX: 0 as Number,
-        buttonPaddingY: 0 as Number,
-        buttonBorderRadius: 0 as Number,
-        buttonFontSize: 0 as Number,
-        buttonColorText: '' as String,
-        inputPaddingX: 0 as Number,
-        inputPaddingY: 0 as Number,
-        inputBorderRadius: 0 as Number,
-        inputFontSize: 0 as Number,
+        buttonPaddingX: 16 as Number,
+        buttonPaddingY: 8 as Number,
+        buttonBorderRadius: 32 as Number,
+        buttonFontSize: 16 as Number,
+        buttonColorText: '#D72045' as String,
+        inputPaddingX: 4 as Number,
+        inputPaddingY: 2 as Number,
+        inputBorderRadius: 16 as Number,
+        inputFontSize: 14 as Number,
     }),
     getters: {
         getButtonPaddingX: (state) => state.buttonPaddingX,
@@ -25,31 +25,31 @@ export const useComponentsStore = defineStore('components', {
 
     },
     actions: {
-        setButtonPaddingX(value) {
+        setButtonPaddingX(value: Number) {
             this.buttonPaddingX = value;
         },
-        setButtonPaddingY(value) {
+        setButtonPaddingY(value: Number) {
             this.buttonPaddingY = value;
         },
-        setButtonBorderRadius(value) {
+        setButtonBorderRadius(value: Number) {
             this.buttonBorderRadius = value;
         },
-        setButtonFontSize(value) {
+        setButtonFontSize(value: Number) {
             this.buttonFontSize = value;
         },
-        setButtonColorText(value) {
+        setButtonColorText(value: String) {
             this.buttonColorText = value;
         },
-        setInputPaddingX(value) {
+        setInputPaddingX(value: Number) {
             this.inputPaddingX = value;
         },
-        setInputPaddingY(value) {
+        setInputPaddingY(value: Number) {
             this.inputPaddingY = value;
         },
-        setInputBorderRadius(value) {
+        setInputBorderRadius(value: Number) {
             this.inputBorderRadius = value;
         },
-        setInputFontSize(value) {
+        setInputFontSize(value: Number) {
             this.inputFontSize = value;
         },
     },

@@ -2,13 +2,13 @@ import { defineStore } from 'pinia';
 
 export const useColorsStore = defineStore('colors', {
     state: () => ({
-        colorLightBase: '' as String,
-        colorLightDarker: '' as String,
-        colorLightLighter: '' as String,
-        colorDarkBase: '' as String,
-        colorDarkDarker: '' as String,
-        colorDarkLighter: '' as String,
-        accentColor: '' as String,
+        colorLightBase: '#AEE862' as String,
+        colorLightDarker: '#80AC47' as String,
+        colorLightLighter: '#D9FFA7' as String,
+        colorDarkBase: '#EA607C' as String,
+        colorDarkDarker: '#D72045' as String,
+        colorDarkLighter: '#FF96AC' as String,
+        accentColor: '#E2B208' as String,
     }),
     getters: {
         getColorLightBase: (state) => state.colorLightBase,

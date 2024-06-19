@@ -2,14 +2,14 @@ import { defineStore } from 'pinia';
 
 export const useLayoutStore = defineStore('layout', {
     state: () => ({
-        layoutMaxWidth: 0 as Number,
-        layoutPaddingX: 0 as Number,
-        layoutPaddingY: 0 as Number,
-        layoutBreakpointLarge: 0 as Number,
-        layoutBreakpointMedium: 0 as Number,
-        layoutBreakpointSmall: 0 as Number,
-        layoutNbColumns: 0 as Number,
-        layoutGutter: 0 as Number,
+        layoutMaxWidth: 1200 as Number,
+        layoutPaddingX: 60 as Number,
+        layoutPaddingY: 40 as Number,
+        layoutBreakpointLarge: 1024 as Number,
+        layoutBreakpointMedium: 768 as Number,
+        layoutBreakpointSmall: 425 as Number,
+        layoutNbColumns: 12 as Number,
+        layoutGutter: 16 as Number,
     }),
     getters: {
         getLayoutMaxWidth: (state) => state.layoutMaxWidth,
