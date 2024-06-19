@@ -2,7 +2,7 @@
     <div>
         <div>
             <label :for="name">{{ label }}</label>
-            <span>{{ value }} {{ suffix }}</span>
+            <span>{{ value }}{{ suffix ? ' ' + suffix : null }}</span>
         </div>
         <input :id="name" type="range" :min="min" :max="max" :step="step" :value="value" @input="updateValue">
     </div>
@@ -33,7 +33,7 @@ export default {
         },
         suffix: {
             type: String,
-            default: 'px'
+            required: false
         },
         value: {
             type: Number,
