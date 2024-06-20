@@ -43,14 +43,24 @@
       <div class="hidden md:flex md:w-3/5 rounded-main shadow-extern p-1">
         <div class="flex flex-col shadow-intern w-full rounded-main justify-center items-center p-12 gap-32">
           <div class="border-pink relative overflow-hidden bg-pink h-60 w-48" :style="`border-radius: ${cardBorderRadius}px; padding: ${cardPaddingY}px ${cardPaddingX}px;`">
-              <div class="bg-[#E2B208] h-full absolute left-0 top-0 opacity-80" :style="`width:${cardPaddingX}px;`"></div>
-              <div class="bg-[#E2B208] h-full absolute right-0 top-0 opacity-80" :style="`width:${cardPaddingX}px;`"></div>
-              <div class="bg-[#AEE862] w-full absolute left-0 top-0 opacity-80" :style="`height:${cardPaddingY}px;`"></div>
-              <div class="bg-[#AEE862] w-full absolute left-0 bottom-0 opacity-80" :style="`height:${cardPaddingY}px;`"></div>
-              <div class="h-16 w-full bg-white rounded-[12px]"></div>
-              <div class="h-4 w-full bg-white rounded-[12px] mt-2"></div>
-              <div class="h-4 w-full bg-white rounded-[12px] mt-2"></div>
-              <div class="h-4 w-full bg-white rounded-[12px] mt-2"></div>
+            <div class="bg-[#E2B208] h-full absolute left-0 top-0 opacity-80" :style="`width:${cardPaddingX}px;`"></div>
+            <div class="bg-[#E2B208] h-full absolute right-0 top-0 opacity-80" :style="`width:${cardPaddingX}px;`"></div>
+            <div class="bg-[#AEE862] w-full absolute left-0 top-0 opacity-80" :style="`height:${cardPaddingY}px;`"></div>
+            <div class="bg-[#AEE862] w-full absolute left-0 bottom-0 opacity-80" :style="`height:${cardPaddingY}px;`"></div>
+            <div class="h-16 w-full bg-white rounded-[12px]"></div>
+            <div class="h-4 w-full bg-white rounded-[12px] mt-2"></div>
+            <div class="h-4 w-full bg-white rounded-[12px] mt-2"></div>
+            <div class="h-4 w-full bg-white rounded-[12px] mt-2"></div>
+          </div>
+          <div class="flex flex-col gap-2 justify-center px-8">
+              <div class="flex gap-4 items-center">
+                <div class="bg-[#E2B208] h-5 w-5 rounded-input"></div>
+                <span class="font-medium font-sm">Padding Horizontal</span>
+              </div>
+              <div class="flex gap-4 items-center">
+                <div class="bg-green h-5 w-5 rounded-input"></div>
+                <span class="font-medium font-sm">Padding Vertical</span>
+              </div>
             </div>
         </div>
       </div>
