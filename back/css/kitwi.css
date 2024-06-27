@@ -102,6 +102,7 @@ body .button:hover {
   border-radius: var(--button-border-radius);
   border: 1px solid var(--color-accent);
   padding: var(--button-padding-y) var(--button-padding-x);
+  font-weight: 500;
 }
 
 body .button:hover, body.dark .button:hover {

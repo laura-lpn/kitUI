@@ -100,15 +100,15 @@
         <div class="flex flex-col shadow-intern w-full rounded-main justify-center items-center p-12 gap-32">
           <div class="flex flex-col gap-8">
             <div class=" flex gap-4">
-              <button class="border button" :style="`color: ${ButtonColorText}; background: ${accentColor}; font-size: ${buttonFontSize}px; padding: ${buttonPaddingY}px ${buttonPaddingX}px; border-radius: ${buttonBorderRadius}px; border-color: ${accentColor};`">Button</button>
-              <button :style="`color: ${ButtonColorText}; background: ${accentColor}; font-size: ${buttonFontSize}px; padding: ${buttonPaddingY}px ${buttonPaddingX}px; border-radius: ${buttonBorderRadius}px; border-color: ${accentColor}`" class="border flex items-center justify-center gap-4">
+              <button class="border button font-medium" :style="`color: ${ButtonColorText}; background: ${accentColor}; font-size: ${buttonFontSize}px; padding: ${buttonPaddingY}px ${buttonPaddingX}px; border-radius: ${buttonBorderRadius}px; border-color: ${accentColor};`">Button</button>
+              <button :style="`color: ${ButtonColorText}; background: ${accentColor}; font-size: ${buttonFontSize}px; padding: ${buttonPaddingY}px ${buttonPaddingX}px; border-radius: ${buttonBorderRadius}px; border-color: ${accentColor}`" class="border flex font-medium items-center justify-center gap-4">
                 Button 
                 <font-awesome-icon :icon="['fas', 'chevron-right']"/>
               </button>
             </div>
             <div class=" flex gap-4">
-              <button class="border button bg-white" :style="`color: ${accentColor}; font-size: ${buttonFontSize}px; padding: ${buttonPaddingY}px ${buttonPaddingX}px; border-radius: ${buttonBorderRadius}px; border-color: ${accentColor};`">Button</button>
-              <button :style="`color: ${accentColor}; font-size: ${buttonFontSize}px; padding: ${buttonPaddingY}px ${buttonPaddingX}px; border-radius: ${buttonBorderRadius}px; border-color: ${accentColor}`" class="border flex items-center justify-center gap-4 bg-white">
+              <button class="border button bg-white font-medium" :style="`color: ${accentColor}; font-size: ${buttonFontSize}px; padding: ${buttonPaddingY}px ${buttonPaddingX}px; border-radius: ${buttonBorderRadius}px; border-color: ${accentColor};`">Button</button>
+              <button :style="`color: ${accentColor}; font-size: ${buttonFontSize}px; padding: ${buttonPaddingY}px ${buttonPaddingX}px; border-radius: ${buttonBorderRadius}px; border-color: ${accentColor}`" class="border font-medium flex items-center justify-center gap-4 bg-white">
                 Button 
                 <font-awesome-icon :icon="['fas', 'chevron-right']"/>
               </button>
