@@ -147,7 +147,7 @@ export default {
       let b = parseInt(hexColor.slice(5, 7), 16);
 
       // Calculate darker color
-      const factor = 0.3; // 10% darker
+      const factor = 0.7; // 10% darker
       r = Math.max(Math.floor(r * factor), 0);
       g = Math.max(Math.floor(g * factor), 0);
       b = Math.max(Math.floor(b * factor), 0);

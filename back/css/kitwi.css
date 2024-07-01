@@ -78,11 +78,13 @@ h6 {
 /* text */
 body {
   color: var(--color-dark-base);
+  background-color: var(--color-light-base);
   font-family: var(--text-font-family), sans-serif;
 }
 
 body.dark {
   color: var(--color-light-base);
+  background-color: var(--color-dark-base);
 }
 
 body p {
