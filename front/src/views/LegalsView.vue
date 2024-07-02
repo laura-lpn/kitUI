@@ -1,6 +1,6 @@
 <template>
   <div class="bg-white rounded-[32px] my-12 w-4/5 sm:w-3/4 mx-auto py-8 px-6 sm:px-16 md:px-20 flex flex-col justify-center items-center gap-8">
-    <h1 class="text-3xl text-pink font-semibold mb-8">Mentions légals</h1>
+    <h1 class="text-3xl text-pink font-semibold mb-8">Mentions légales</h1>
 
     <div class="w-full">
       <h2 class="text-xl font-medium">Edition du site</h2>
