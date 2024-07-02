@@ -10,7 +10,17 @@ async function create(req, res) {
     res.status(400).json({ message: "Erreur lors de l'insertion" });
 }
 
+async function download(req, res) {
+  try {
+    await kituiService.download(res);
+  } catch (error) {
+    console.error('Error in kituiController.download', error);
+    res.status(500).json({ message: "Internal Server Error" });
+  }
+}
+
 
 module.exports = {
   create,
+  download
 };

@@ -9,5 +9,9 @@ router.post("/", (req, res) => {
     kituiController.create(req, res);
 });
 
+router.get("/download", (req, res) => {
+    kituiController.download(req, res);
+});
+
 
 module.exports = router;
