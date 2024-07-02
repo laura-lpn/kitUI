@@ -6,7 +6,7 @@
         <section>
           <h2 class="text-pink text-xl text-medium mb-4">Couleur sombre</h2>
           <div class="flex justify-between items-end">
-            <my-color-picker @colorValue="setColorDarkBase" :label="'Base'" :name="'colorDarkBase'" :value="colorDarkBase"></my-color-picker>
+            <my-color-picker @colorValue="setColorDarkBase" label="Base" name="colorDarkBase" :value="colorDarkBase"></my-color-picker>
             <div class="flex gap-4">
               <div class="flex flex-col gap-2 items-center">
                 <span class="text-sm">Claire</span>
@@ -26,7 +26,7 @@
         <section>
           <h2 class="text-pink text-xl text-medium mb-4">Couleur claire</h2>
           <div class="flex justify-between items-end">
-            <my-color-picker @colorValue="setColorLightBase" :label="'Base'" :name="'colorDarkBase'" :value="colorLightBase"></my-color-picker>
+            <my-color-picker @colorValue="setColorLightBase" label="Base" name="colorDarkBase" :value="colorLightBase"></my-color-picker>
             <div class="flex gap-4">
               <div class="flex flex-col gap-2 items-center">
                 <span class="text-sm">Claire</span>
@@ -76,8 +76,8 @@
       </div>
     </section>
     <section class="flex flex-col justify-center items-center md:flex-row gap-4 mt-12 md:gap-16 lg:gap-32">
-      <my-button :id="'previousButton'" :value="'Précédent'" @click="previousStep"></my-button>
-      <my-button :id="'nextButton'" :value="'Suivant'" @click="nextStep"></my-button>
+      <my-button id="previousButton" value="Précédent" @click="previousStep"/>
+      <my-button id="nextButton" value="Suivant" @click="nextStep"/>
     </section>
   </div>
 </template>

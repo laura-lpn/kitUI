@@ -9,32 +9,32 @@
             <h3 class="text-pink text-base text-medium">Padding</h3>
             <my-range
               @rangeValue="setCardPaddingX"
-              :label="'Horizontal'"
-              :name="'cardPaddingX'"
-              :min="0"
-              :max="40"
-              :step="4"
-              :suffix="'px'"
+              label="Horizontal"
+              name="cardPaddingX"
+              min=0
+              max=40
+              step=4
+              suffix="px"
               :value="cardPaddingX"
             ></my-range>
             <my-range
               @rangeValue="setCardPaddingY"
-              :label="'Vertical'"
-              :name="'cardPaddingY'"
-              :min="0"
-              :max="40"
-              :step="4"
-              :suffix="'px'"
+              label="Vertical"
+              name="cardPaddingY"
+              min=0
+              max=40
+              step=4
+              suffix="px"
               :value="cardPaddingY"
             ></my-range>
             <my-range
               @rangeValue="setCardBorderRadius"
-              :label="'Arrondis'"
-              :name="'cardBorderRadius'"
-              :min="0"
-              :max="40"
-              :step="4"
-              :suffix="'px'"
+              label="Arrondis"
+              name="cardBorderRadius"
+              min=0
+              max=40
+              step=4
+              suffix="px"
               :value="cardBorderRadius"
             ></my-range>
           </div>
@@ -66,8 +66,8 @@
       </div>
     </section>
     <section class="flex flex-col justify-center items-center md:flex-row gap-4 mt-12 md:gap-16 lg:gap-32">
-      <my-button :id="'previousButton'" :value="'Précédent'" @click="previousStep"></my-button>
-      <my-button :id="'download'" :value="'Terminer'" @click="finishStep"></my-button>
+      <my-button id="previousButton" value="Précédent" @click="previousStep"/>
+      <my-button id="download" value="Terminer" @click="finishStep"/>
     </section>
   </div>
 </template>

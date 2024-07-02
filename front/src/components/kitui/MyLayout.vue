@@ -8,34 +8,34 @@
           <div class="flex flex-col gap-4">
             <my-range
               @rangeValue="setLayoutMaxWidth"
-              :label="'Max-width'"
-              :name="'layoutMaxWidth'"
-              :min="800"
-              :max="2000"
-              :step="100"
-              :suffix="'px'"
+              label="Max-width"
+              name="layoutMaxWidth"
+              min=800
+              max=2000
+              step=100
+              suffix="px"
               :value="layoutMaxWidth"
             ></my-range>
             <div class="flex flex-col gap-4">
               <h3 class="text-pink text-base text-medium">Padding</h3>
               <my-range
                 @rangeValue="setLayoutPaddingX"
-                :label="'Horizontal'"
-                :name="'layoutPaddingX'"
-                :min="0"
-                :max="100"
-                :step="10"
-                :suffix="'px'"
+                label="Horizontal"
+                name="layoutPaddingX"
+                min=0
+                max=100
+                step=10
+                suffix="px"
                 :value="layoutPaddingX"
               ></my-range>
               <my-range
                 @rangeValue="setLayoutPaddingY"
-                :label="'Vertical'"
-                :name="'layoutPaddingY'"
-                :min="0"
-                :max="100"
-                :step="10"
-                :suffix="'px'"
+                label="Vertical"
+                name="layoutPaddingY"
+                min=0
+                max=100
+                step=10
+                suffix="px"
                 :value="layoutPaddingY"
               ></my-range>
             </div>
@@ -46,42 +46,42 @@
           <div class="flex flex-col gap-4">
             <my-input
               @inputValue="setLayoutBreakpointLarge"
-              :label="'Large'"
-              :name="'layoutBreakpointLarge'"
-              :suffix="'px'"
+              label="Large"
+              name="layoutBreakpointLarge"
+              suffix="px"
               :value="layoutBreakpointLarge"
             ></my-input>
             <my-input
               @inputValue="setLayoutBreakpointMedium"
-              :label="'Medium'"
-              :name="'layoutBreakpointMedium'"
-              :suffix="'px'"
+              label="Medium"
+              name="layoutBreakpointMedium"
+              suffix="px"
               :value="layoutBreakpointMedium"
             ></my-input>
             <my-input
               @inputValue="setLayoutBreakpointSmall"
-              :label="'Small'"
-              :name="'layoutBreakpointSmall'"
-              :suffix="'px'"
+              label="Small"
+              name="layoutBreakpointSmall"
+              suffix="px"
               :value="layoutBreakpointSmall"
             ></my-input>
             <my-range
               @rangeValue="setLayoutNbColumns"
-              :label="'Nombre de colonnes (max 12)'"
-              :name="'layoutNbColumns'"
-              :min="1"
-              :max="12"
-              :step="1"
+              label="Nombre de colonnes (max 12)"
+              name="layoutNbColumns"
+              min=1
+              max=12
+              step=1
               :value="layoutNbColumns"
             ></my-range>
             <my-range
               @rangeValue="setLayoutGutter"
-              :label="'Espacement'"
-              :name="'layoutGutter'"
-              :min="0"
-              :max="80"
-              :step="4"
-              :suffix="'px'"
+              label="Espacement"
+              name="layoutGutter"
+              min=0
+              max=80
+              step=4
+              suffix="px"
               :value="layoutGutter"
             ></my-range>
           </div>
@@ -114,7 +114,7 @@
       </div>
     </section>
     <section class="flex flex-col justify-center items-center md:flex-row gap-4 mt-12 md:gap-16 lg:gap-32">
-      <my-button :id="'nextButton'" :value="'Suivant'" @click="nextStep"></my-button>
+      <my-button id="nextButton" value="Suivant" @click="nextStep"/>
     </section>
   </div>
 </template>

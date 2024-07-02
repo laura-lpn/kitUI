@@ -6,44 +6,44 @@
         <section>
           <h2 class="text-pink text-xl text-medium mb-4">Titres</h2>
           <div class="flex flex-col gap-4">
-            <my-select @selectValue="setTitleFontFamily" :label="'Police'" :name="'titleFontFamily'" :options="fonts" :value="titleFontFamily"></my-select>
+            <my-select @selectValue="setTitleFontFamily" label="Police" name="titleFontFamily" :options="fonts" :value="titleFontFamily"></my-select>
             <h3 class="text-pink text-base text-medium">Titre 1</h3>
             <div class="flex gap-3 w-full items-end">
-              <my-input @inputValue="setH1FontSize" :label="'Taille'" :name="'h1FontSize'" :value="h1FontSize" class="w-1/2"></my-input>
-              <my-select @selectValue="setH1FontWeight" :label="'Graisse'" :name="'h1FontWeight'" :options="FontWeights" :value="h1FontWeight" class="w-1/2"></my-select>
+              <my-input @inputValue="setH1FontSize" label="Taille" name="h1FontSize" :value="h1FontSize" class="w-1/2"></my-input>
+              <my-select @selectValue="setH1FontWeight" label="Graisse" name="h1FontWeight" :options="FontWeights" :value="h1FontWeight" class="w-1/2"></my-select>
             </div>
             <h3 class="text-pink text-base text-medium">Titre 2</h3>
             <div class="flex gap-3 w-full items-end">
-              <my-input @inputValue="setH2FontSize" :label="'Taille'" :name="'h2FontSize'" :value="h2FontSize" class="w-1/2"></my-input>
-              <my-select @selectValue="setH2FontWeight" :label="'Graisse'" :name="'h2FontWeight'" :options="FontWeights" :value="h2FontWeight" class="w-1/2"></my-select>
+              <my-input @inputValue="setH2FontSize" label="Taille" name="h2FontSize" :value="h2FontSize" class="w-1/2"></my-input>
+              <my-select @selectValue="setH2FontWeight" label="Graisse" name="h2FontWeight" :options="FontWeights" :value="h2FontWeight" class="w-1/2"></my-select>
             </div>
             <h3 class="text-pink text-base text-medium">Titre 3</h3>
             <div class="flex gap-3 w-full items-end">
-              <my-input @inputValue="setH3FontSize" :label="'Taille'" :name="'h3FontSize'" :value="h3FontSize" class="w-1/2"></my-input>
-              <my-select @selectValue="setH3FontWeight" :label="'Graisse'" :name="'h3FontWeight'" :options="FontWeights" :value="h3FontWeight" class="w-1/2"></my-select>
+              <my-input @inputValue="setH3FontSize" label="Taille" name="h3FontSize" :value="h3FontSize" class="w-1/2"></my-input>
+              <my-select @selectValue="setH3FontWeight" label="Graisse" name="h3FontWeight" :options="FontWeights" :value="h3FontWeight" class="w-1/2"></my-select>
             </div>
             <h3 class="text-pink text-base text-medium">Titre 4</h3>
             <div class="flex gap-3 w-full items-end">
-              <my-input @inputValue="setH4FontSize" :label="'Taille'" :name="'h4FontSize'" :value="h4FontSize" class="w-1/2"></my-input>
-              <my-select @selectValue="setH4FontWeight" :label="'Graisse'" :name="'h4FontWeight'" :options="FontWeights" :value="h4FontWeight" class="w-1/2"></my-select>
+              <my-input @inputValue="setH4FontSize" label="Taille" name="h4FontSize" :value="h4FontSize" class="w-1/2"></my-input>
+              <my-select @selectValue="setH4FontWeight" label="Graisse" name="h4FontWeight" :options="FontWeights" :value="h4FontWeight" class="w-1/2"></my-select>
             </div>
             <h3 class="text-pink text-base text-medium">Titre 5</h3>
             <div class="flex gap-3 w-full items-end">
-              <my-input @inputValue="setH5FontSize" :label="'Taille'" :name="'h5FontSize'" :value="h5FontSize" class="w-1/2"></my-input>
-              <my-select @selectValue="setH5FontWeight" :label="'Graisse'" :name="'h5FontWeight'" :options="FontWeights" :value="h5FontWeight" class="w-1/2"></my-select>
+              <my-input @inputValue="setH5FontSize" label="Taille" name="h5FontSize" :value="h5FontSize" class="w-1/2"></my-input>
+              <my-select @selectValue="setH5FontWeight" label="Graisse" name="h5FontWeight" :options="FontWeights" :value="h5FontWeight" class="w-1/2"></my-select>
             </div>
             <h3 class="text-pink text-base text-medium">Titre 6</h3>
             <div class="flex gap-3 w-full items-end">
-              <my-input @inputValue="setH6FontSize" :label="'Taille'" :name="'h6FontSize'" :value="h6FontSize" class="w-1/2"></my-input>
-              <my-select @selectValue="setH6FontWeight" :label="'Graisse'" :name="'h6FontWeight'" :options="FontWeights" :value="h6FontWeight" class="w-1/2"></my-select>
+              <my-input @inputValue="setH6FontSize" label="Taille" name="h6FontSize" :value="h6FontSize" class="w-1/2"></my-input>
+              <my-select @selectValue="setH6FontWeight" label="Graisse" name="h6FontWeight" :options="FontWeights" :value="h6FontWeight" class="w-1/2"></my-select>
             </div>
           </div>
         </section>
         <section>
           <h2 class="text-pink text-xl text-medium mb-4">Textes</h2>
           <div class="flex flex-col gap-4">
-            <my-select @selectValue="setTextFontFamily" :label="'Police'" :name="'textFontFamily'" :options="fonts" :value="textFontFamily"></my-select>
-            <my-input @inputValue="setTextFontSize" :label="'Taille'" :name="'textFontSize'" :value="textFontSize"></my-input>
+            <my-select @selectValue="setTextFontFamily" label="Police" name="textFontFamily" :options="fonts" :value="textFontFamily"></my-select>
+            <my-input @inputValue="setTextFontSize" label="Taille" name="textFontSize" :value="textFontSize"></my-input>
           </div>
         </section>
       </div>
@@ -62,8 +62,8 @@
       </div>
     </section>
     <section class="flex flex-col justify-center items-center md:flex-row gap-4 mt-12 md:gap-16 lg:gap-32">
-      <my-button :id="'previousButton'" :value="'Précédent'" @click="previousStep"></my-button>
-      <my-button :id="'nextButton'" :value="'Suivant'" @click="nextStep"></my-button>
+      <my-button id="previousButton" value="Précédent" @click="previousStep"/>
+      <my-button id="nextButton" value="Suivant" @click="nextStep"/>
     </section>
   </div>
 </template>

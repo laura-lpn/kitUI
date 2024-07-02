@@ -9,42 +9,42 @@
             <h3 class="text-pink text-base text-medium">Padding</h3>
             <my-range
               @rangeValue="setButtonPaddingX"
-              :label="'Horizontal'"
-              :name="'buttonPaddingX'"
-              :min="0"
-              :max="40"
-              :step="4"
-              :suffix="'px'"
+              label="Horizontal"
+              name="buttonPaddingX"
+              min=0
+              max=40
+              step=4
+              suffix="px"
               :value="buttonPaddingX"
             ></my-range>
             <my-range
               @rangeValue="setButtonPaddingY"
-              :label="'Vertical'"
-              :name="'buttonPaddingY'"
-              :min="0"
-              :max="32"
-              :step="4"
-              :suffix="'px'"
+              label="Vertical"
+              name="buttonPaddingY"
+              min=0
+              max=32
+              step=4
+              suffix="px"
               :value="buttonPaddingY"
             ></my-range>
             <my-range
               @rangeValue="setButtonBorderRadius"
-              :label="'Arrondis'"
-              :name="'buttonBorderRadius'"
-              :min="0"
-              :max="48"
-              :step="4"
-              :suffix="'px'"
+              label="Arrondis"
+              name="buttonBorderRadius"
+              min=0
+              max=48
+              step=4
+              suffix="px"
               :value="buttonBorderRadius"
             ></my-range>
             <my-range
               @rangeValue="setButtonFontSize"
-              :label="'Taille du texte'"
-              :name="'buttonFontSize'"
-              :min="10"
-              :max="30"
-              :step="2"
-              :suffix="'px'"
+              label="Taille du texte"
+              name="buttonFontSize"
+              min=10
+              max=30
+              step=2
+              suffix="px"
               :value="buttonFontSize"
             ></my-range>
           </div>
@@ -55,42 +55,42 @@
             <h3 class="text-pink text-base text-medium">Padding</h3>
             <my-range
               @rangeValue="setInputPaddingX"
-              :label="'Horizontal'"
-              :name="'inputPaddingX'"
-              :min="0"
-              :max="40"
-              :step="4"
-              :suffix="'px'"
+              label="Horizontal"
+              name="inputPaddingX"
+              min=0
+              max=40
+              step=4
+              suffix="px"
               :value="inputPaddingX"
             ></my-range>
             <my-range
               @rangeValue="setInputPaddingY"
-              :label="'Vertical'"
-              :name="'inputPaddingY'"
-              :min="0"
-              :max="32"
-              :step="4"
-              :suffix="'px'"
+              label="Vertical"
+              name="inputPaddingY"
+              min=0
+              max=32
+              step=4
+              suffix="px"
               :value="inputPaddingY"
             ></my-range>
             <my-range
               @rangeValue="setInputBorderRadius"
-              :label="'Arrondis'"
-              :name="'inputBorderRadius'"
-              :min="0"
-              :max="48"
-              :step="4"
-              :suffix="'px'"
+              label="Arrondis"
+              name="inputBorderRadius"
+              min=0
+              max=48
+              step=4
+              suffix="px"
               :value="inputBorderRadius"
             ></my-range>
             <my-range
               @rangeValue="setInputFontSize"
-              :label="'Taille du texte'"
-              :name="'inputFontSize'"
-              :min="10"
-              :max="30"
-              :step="2"
-              :suffix="'px'"
+              label="Taille du texte"
+              name="inputFontSize"
+              min=10
+              max=30
+              step=2
+              suffix="px"
               :value="inputFontSize"
             ></my-range>
           </div>
@@ -127,8 +127,8 @@
       </div>
     </section>
     <section class="flex flex-col justify-center items-center md:flex-row gap-4 mt-12 md:gap-16 lg:gap-32">
-      <my-button :id="'previousButton'" :value="'Précédent'" @click="previousStep"></my-button>
-      <my-button :id="'nextButton'" :value="'Suivant'" @click="nextStep"></my-button>
+      <my-button id="previousButton" value="Précédent" @click="previousStep"/>
+      <my-button id="nextButton" value="Suivant" @click="nextStep"/>
     </section>
   </div>
 </template>
