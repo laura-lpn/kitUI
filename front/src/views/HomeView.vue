@@ -4,7 +4,9 @@
     <div class="w-4/5 mx-auto flex flex-col items-center lg:w-2/3">
       <p class="text-lg text-center">KitUI est un outil de génération de kit d'interface utilisateur. Il vous permet de générer un kit d'interface utilisateur personnalisé en fonction de vos besoins.</p>
 
-      <my-button @click="$router.push({ name: 'create' })" class="mt-8" :value="'Générer mon kit'" :id="'create'"/>
+      <RouterLink :to="{ name: 'create' }" class="mt-8">
+        <my-button value="Générer mon kit" id="create"></my-button>
+      </RouterLink>
     </div>
     </div>
 </template>
