@@ -8,6 +8,7 @@
 
 .grid {
   display: grid;
+  width: 100%;
   grid-template-columns: repeat(var(--layout-nb-columns), 1fr);
   grid-gap: var(--layout-gutter);
 }
