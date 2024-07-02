@@ -60,7 +60,7 @@
               </p>
             </div>
             <p class="text-xs" :style="`color: ${colorDarkBase}`">Lorem ipsum dolor sit amet consectetur. Suspendisse sapien tellus consequat ultricies cras ut imperdiet imperdiet.</p>
-            <button class="text-xs rounded-main py-2 px-6 ml-auto mt-2 font-medium" :style="`background: ${accentColor}; color: ${ButtonColorText}`">Button</button>
+            <button class="text-xs focus:rounded-main rounded-main py-2 px-6 ml-auto mt-2 font-medium" :style="`background: ${accentColor}; color: ${ButtonColorText}`">Button</button>
           </div>
           <div class="flex flex-col gap-2 rounded-main py-4 px-6 w-60" :style="`background: ${colorDarkDarker};`">
             <div class="flex justify-between items-center">
@@ -70,7 +70,7 @@
               </p>
             </div>
             <p class="text-xs" :style="`color: ${colorLightBase}`">Lorem ipsum dolor sit amet consectetur. Suspendisse sapien tellus consequat ultricies cras ut imperdiet imperdiet.</p>
-            <button class="text-xs rounded-main py-2 px-6 ml-auto mt-2 font-medium" :style="`background: ${accentColor}; color: ${ButtonColorText}`">Button</button>
+            <button class="text-xs focus:rounded-main rounded-main py-2 px-6 ml-auto mt-2 font-medium" :style="`background: ${accentColor}; color: ${ButtonColorText}`">Button</button>
           </div>
         </div>
       </div>
