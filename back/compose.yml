@@ -1,0 +1,21 @@
+services:
+  node:
+    container_name: kitui_node
+    build: .
+    networks:
+      - default
+      - global_reverse_proxy
+    volumes:
+      - ./:/app
+      - /app/node_modules
+    restart: unless-stopped
+    labels:
+      caddy: "backend.kitui.lauralpn.fr"
+      caddy.reverse_proxy: "{{upstreams 3000}}"
+    entrypoint: ["pnpm", "start"]
+
+networks:
+  global_reverse_proxy:
+    external: true
+  default:
+    driver: bridge
