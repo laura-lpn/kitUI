@@ -4,27 +4,19 @@
 
     <div class="w-full">
       <h2 class="text-xl font-medium">Edition du site</h2>
-      <p>Le présent site, accessible à l’URL KitUI.com (le « Site »), est édité par : <br>
-        Kiwi Kitwi, résidant 2 rue de l'échappée 75010 PARIS, de nationalité Française (France), né(e) le 12/06/1998
+      <p>Le présent site, accessible à l’URL kitui.lauralpn.fr (le « Site »), est édité par : <br>
+        Laura Lepannetier, de nationalité Française (France)
       </p>
     </div>
     <div class="w-full">
       <h2 class="text-xl font-medium">Hébergement</h2>
       <p>Le Site est hébergé par : <br>
-        Le Site est hébergé par la société OVH SAS, situé 2 rue Kellermann - BP 80157 - 59053 Roubaix Cedex 1, (contact téléphonique ou email : 1007).
+        Hostinger, dont le siège social est situé à Kaunas, Lituanie (<a href="https://www.hostinger.fr/contact" class="text-pink underline">contact</a>).
       </p>
     </div>
     <div class="w-full">
       <h2 class="text-xl font-medium">Directeur de publication</h2>
-      <p>Le Directeur de la publication du Site est Kiwi Kitwi.
-      </p>
-    </div>
-
-    <div class="w-full">
-      <h2 class="text-xl font-medium">Contact</h2>
-      <p>Par téléphone : +33208030407<br>
-        Par email : kitwi@witui.com<br>
-        Par courrier : 2 rue de l'échappée 75010 PARIS
+      <p>Le Directeur de la publication du Site est Laura Lepannetier.
       </p>
     </div>
   </div>
