@@ -7,7 +7,7 @@ async function create(newKitui) {
   const styleCss = generateCSS(newKitui);
 
   try {
-    fs.readFile(path.join(__dirname, '/app/css/kitwi.css'), 'utf8', (readErr, data) => {
+    fs.readFile(path.join('/app/css/kitwi.css'), 'utf8', (readErr, data) => {
       if (readErr) {
         console.log(readErr);
         return;
@@ -15,7 +15,7 @@ async function create(newKitui) {
       const newData = styleCss + data;
 
       // Écrire le nouveau contenu dans un autre fichier
-      fs.writeFile(path.join(__dirname, '/app/files/template.css'), newData, function (writeErr) {
+      fs.writeFile(path.join('/app/files/template.css'), newData, function (writeErr) {
         if (writeErr) {
           console.log(writeErr);
         } else {
