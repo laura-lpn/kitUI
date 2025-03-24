@@ -5,7 +5,7 @@ const cors = require('cors');
 const routes = require('./routes');
 
 app.use(cors({
-  origin: 'http://kitui.lauralpn.fr'
+  origin: 'https://kitui.lauralpn.fr'
 }));
 app.use(express.json());
 app.use('/api', routes);

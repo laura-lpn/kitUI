@@ -80,7 +80,7 @@ export default {
       console.log('send kit')
 
       try {
-        const response = await fetch('http://backend.kitui.lauralpn.fr/api/kitui', {
+        const response = await fetch('https://backend.kitui.lauralpn.fr/api/kitui', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json'

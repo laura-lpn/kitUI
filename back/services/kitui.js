@@ -26,7 +26,7 @@ async function create(newKitui) {
 
   // renvoyer au front le fichier css généré
 
-return "http://backend.kitui.lauralpn.fr/template.css";
+return "https://backend.kitui.lauralpn.fr/template.css";
 
   } catch (error) {
     console.error('Error in kituiService.create', error);

@@ -17,7 +17,7 @@ export default {
     async download() {
       console.log('Download')
       try {
-        const response = await fetch('http://backend.kitui.lauralpn.fr/api/kitui/download');
+        const response = await fetch('https://backend.kitui.lauralpn.fr/api/kitui/download');
 
         if (response.ok) {
           const blob = await response.blob()
