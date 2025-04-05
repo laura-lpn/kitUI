@@ -5,6 +5,8 @@
 
 **KitUI** est un outil basé sur **Vue.js** permettant de créer un kit UI sur mesure. Il génère un fichier CSS dynamique à l'aide d'une API développée en **Node.js**.
 
+[lien du site](https://kitui.lauralpn.fr)
+
 ---
 
 ## Mise en place du projet
